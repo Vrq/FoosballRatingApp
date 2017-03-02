@@ -1,9 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.guidewire.foosballrating.persistence.GameMapper">
     <cache/>
 
     <select id="getAllGames" resultType="Game">
-        SELECT id, aPlayer1, aPlayer2, bPlayer1, bPlayer2, aScore, bScore, dateOfGame FROM games
+        SELECT * FROM games
     </select>
 
     <insert id="insertGame" parameterType="Game">
