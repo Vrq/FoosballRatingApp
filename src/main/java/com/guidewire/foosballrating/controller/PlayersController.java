@@ -19,9 +19,15 @@ public class PlayersController {
     @Autowired
     private PlayerService playerService;
 
-    @RequestMapping(value = "/get", method = RequestMethod.GET)
+    @RequestMapping(value = "/getById", method = RequestMethod.GET)
     public ResponseEntity<Player> getPlayer(@RequestParam("id") int id) {
         Player player = playerService.getPlayer(id);
+        return new ResponseEntity<>(player, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/getByUsername", method = RequestMethod.GET)
+    public ResponseEntity<Player> getPlayer(@RequestParam("username") String username) {
+        Player player = playerService.getPlayer(username);
         return new ResponseEntity<>(player, HttpStatus.OK);
     }
 
@@ -31,5 +37,15 @@ public class PlayersController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/insertPlayer", method = RequestMethod.POST)
+    public ResponseEntity<String> insertPlayer(@RequestParam("player") Player player) {
+        playerService.insertPlayer(player);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 
+    @RequestMapping(value = "/updatePlayer", method = RequestMethod.POST)
+    public ResponseEntity<String> updatePlayer(@RequestParam("player") Player player) {
+        playerService.updatePlayer(player);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }
