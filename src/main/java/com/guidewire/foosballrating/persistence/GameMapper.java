@@ -9,7 +9,7 @@ import java.util.List;
 public interface GameMapper {
 
     String insert = "INSERT INTO games (aPlayer1, aPlayer2, bPlayer1, bPlayer2, aScore, bScore, dateOfGame) VALUES (#{aPlayer1}, #{aPlayer2}, #{bPlayer1}, #{bPlayer2}, #{aScore}, #{bScore}, #{dateOfGame})";
-    String update = "UPDATE STUDENT SET aPlayer1 = #{aPlayer1}, aPlayer2 = #{aPlayer2}, bPlayer1 = #{bPlayer1}, bPlayer2 = #{bPlayer2}, aScore = #{aScore}, bScore = #{bScore}, dateOfGame = #{dateOfGame} WHERE ID = #{id}";
+    String update = "UPDATE games SET aPlayer1 = #{aPlayer1}, aPlayer2 = #{aPlayer2}, bPlayer1 = #{bPlayer1}, bPlayer2 = #{bPlayer2}, aScore = #{aScore}, bScore = #{bScore}, dateOfGame = #{dateOfGame} WHERE ID = #{id}";
 
     @Select("SELECT * FROM games")
     List<Game> getAllGames();

@@ -2,7 +2,7 @@ package com.guidewire.foosballrating.domain;
 
 
 import java.io.Serializable;
-import java.sql.Timestamp;
+import java.util.Date;
 
 
 public class Game implements Serializable {
@@ -23,7 +23,7 @@ public class Game implements Serializable {
 
     private Integer bScore;
 
-    private Timestamp dateOfGame;
+    private Date dateOfGame;
 
     public long getId() {
         return id;
@@ -81,11 +81,11 @@ public class Game implements Serializable {
         this.bScore = bScore;
     }
 
-    public Timestamp getDateOfGame() {
+    public Date getDateOfGame() {
         return dateOfGame;
     }
 
-    public void setDateOfGame(Timestamp dateOfGame) {
+    public void setDateOfGame(Date dateOfGame) {
         this.dateOfGame = dateOfGame;
     }
 }

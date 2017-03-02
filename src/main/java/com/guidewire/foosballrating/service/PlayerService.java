@@ -16,4 +16,6 @@ public interface PlayerService {
     public int insertPlayer(Player player);
 
     public int updatePlayer(Player player);
+
+    boolean isUsernameAvailable(String username);
 }
