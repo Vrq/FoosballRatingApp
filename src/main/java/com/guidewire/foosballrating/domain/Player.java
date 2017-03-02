@@ -10,7 +10,7 @@ public class Player implements Serializable {
     private int gamesLost;
     private int setsWon;
     private int setsLost;
-    private int rank;
+    private int points;
 
     public int getId() {
         return id;
@@ -60,11 +60,11 @@ public class Player implements Serializable {
         this.setsLost = setsLost;
     }
 
-    public int getRank() {
-        return rank;
+    public int getPoints() {
+        return points;
     }
 
-    public void setRank(int rank) {
-        this.rank = rank;
+    public void setPoints(int points) {
+        this.points = points;
     }
 }
