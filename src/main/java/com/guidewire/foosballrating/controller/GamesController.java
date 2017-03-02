@@ -1,7 +1,7 @@
 package com.guidewire.foosballrating.controller;
 
 import com.guidewire.foosballrating.domain.Game;
-import com.guidewire.foosballrating.persistence.GameMapper;
+import com.guidewire.foosballrating.service.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,17 +9,15 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class GameRestController {
+@RequestMapping("/games")
+public class GamesController {
 
-    final private GameMapper gameMapper;
-
-    public GameRestController(GameMapper cityMapper) {
-        this.gameMapper = cityMapper;
-    }
+    @Autowired
+    private GameService gameService;
 
 
-    @RequestMapping("/games")
-    public List<Game> games() {
-        return gameMapper.getAllGames();
+    @RequestMapping("/getAll")
+    public List<Game> getAllGames() {
+        return gameService.getAllGames();
     }
 }
