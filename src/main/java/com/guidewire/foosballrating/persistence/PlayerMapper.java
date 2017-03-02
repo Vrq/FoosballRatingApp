@@ -8,8 +8,8 @@ import java.util.List;
 @Mapper
 public interface PlayerMapper {
 
-    String insert = "INSERT INTO players (username, gamesWon, gamesLost, setsWon, setsLost, rank) VALUES (#{username}, 0, 0, 0, 0, 100)";
-    String update = "UPDATE players SET gamesWon = #{gamesWon}, gamesLost = #{gamesLost}, setsWon = #{setsWon}, setsLost = #{setsLost}, rank = #{rank} WHERE username = #{username}";
+    String insert = "INSERT INTO players (username, gamesWon, gamesLost, setsWon, setsLost, points) VALUES (#{username}, 0, 0, 0, 0, 100)";
+    String update = "UPDATE players SET gamesWon = #{gamesWon}, gamesLost = #{gamesLost}, setsWon = #{setsWon}, setsLost = #{setsLost}, points = #{rank} WHERE username = #{username}";
 
     @Select("SELECT * from players ORDER BY rank")
     List<Player> getAllPlayers();
