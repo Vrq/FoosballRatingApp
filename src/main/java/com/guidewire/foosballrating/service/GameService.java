@@ -9,7 +9,7 @@ public interface GameService {
 
     public List<Game> getAllGames();
 
-    public int insertGame(Game game);
+    public void insertGame(Game game);
 
     public int updateGame(Game game);
 }
