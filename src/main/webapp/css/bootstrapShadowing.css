@@ -2,9 +2,10 @@
     width: 100%;
     padding: 30px 0;
     border-right: 1px solid #ddd;
+    background-color: #323C50;
 }
 .nav-sidebar a {
-    color: #333;
+    color: red;
     -webkit-transition: all 0.08s linear;
     -moz-transition: all 0.08s linear;
     -o-transition: all 0.08s linear;
@@ -12,11 +13,11 @@
 }
 .nav-sidebar .active a {
     cursor: default;
-    background-color: #0b56a8;
+    background-color: #464A52;
     color: #fff;
 }
 .nav-sidebar .active a:hover {
-    background-color: #E50000;
+    background-color: #464A52;
 }
 .nav-sidebar .text-overflow a,
 .nav-sidebar .text-overflow .media-body {
