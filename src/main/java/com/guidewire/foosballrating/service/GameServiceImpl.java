@@ -18,6 +18,9 @@ public class GameServiceImpl implements GameService {
     @Autowired
     private GameMapper gameMapper;
 
+    @Autowired
+    private RatingService ratingService;
+
     @Override
     public List<Game> getAllGames() {
         Optional<List<Game>> result = Optional.of(gameMapper.getAllGames());
@@ -25,9 +28,10 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
-    public int insertGame(Game game) {
+    public void insertGame(Game game) {
         game.setDateOfGame(new Timestamp(new Date().getTime()));
-        return gameMapper.insertGame(game);
+        gameMapper.insertGame(game);
+        ratingService.updateRatings(game);
     }
 
     @Override
