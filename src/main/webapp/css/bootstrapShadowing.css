@@ -4,26 +4,32 @@
     border-right: 1px solid #ddd;
     /*background-color: #323C50;*/
 }
+
 .nav-sidebar a {
     -webkit-transition: all 0.08s linear;
     -moz-transition: all 0.08s linear;
     -o-transition: all 0.08s linear;
     transition: all 0.08s linear;
 }
+
 .nav-sidebar .active a {
     cursor: default;
     background-color: #464A52;
     color: #fff;
 }
+
 .nav-sidebar .active a:hover {
-  background-color: #464A52;
+    background-color: #464A52;
 }
-.nav-sidebar > ul > li > a:hover{
-  background-color: #464A52;
+
+.nav-sidebar > ul > li > a:hover {
+    background-color: #464A52;
 }
+
 .nav-sidebar a:hover {
     background-color: #464A52;
 }
+
 .nav-sidebar .text-overflow a,
 .nav-sidebar .text-overflow .media-body {
     white-space: nowrap;
@@ -31,10 +37,10 @@
     -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
 }
-.container .text-style
-{
- text-align: justify;
- line-height: 23px;
- margin: 0 13px 0 0;
- font-size: 25px;
+
+.container .text-style {
+    text-align: justify;
+    line-height: 23px;
+    margin: 0 13px 0 0;
+    font-size: 25px;
 }

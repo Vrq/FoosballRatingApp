@@ -17,7 +17,7 @@
             <h3>Team 1</h3>
             <div class="col-sm-4 col-md-4 col-lg-4">
                 <select class="form-control">
-                    <option>Choose player</option>
+                    <option>Player 1</option>
                     <option>Ania</option>
                     <option>Anastasiia</option>
                     <option>Marcin</option>
@@ -27,7 +27,7 @@
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4">
                 <select class="form-control">
-                    <option>Choose player</option>
+                    <option>Player 2</option>
                     <option>Ania</option>
                     <option>Anastasiia</option>
                     <option>Marcin</option>
@@ -36,14 +36,21 @@
                 </select>
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4 input-group">
-                <input type="text" class="form-control" id="usr1">
+                <select class="form-control">
+                    <option>Score 1</option>
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
             </div>
         </div>
         <div class="row">
             <h3>Team 2</h3>
             <div class="col-sm-4 col-md-4 col-lg-4">
                 <select class="form-control">
-                    <option>Choose player</option>
+                    <option>Player 3</option>
                     <option>Ania</option>
                     <option>Anastasiia</option>
                     <option>Marcin</option>
@@ -54,7 +61,7 @@
             <div class="col-sm-4 col-md-4 col-lg-4">
 
                 <select class="form-control">
-                    <option>Choose player</option>
+                    <option>Player 4</option>
                     <option>Ania</option>
                     <option>Anastasiia</option>
                     <option>Marcin</option>
@@ -63,7 +70,14 @@
                 </select>
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4 input-group">
-                <input type="text" class="form-control" id="usr">
+                <select class="form-control">
+                    <option>Score 2</option>
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
             </div>
         </div>
         <div class="row">
@@ -134,8 +148,8 @@
     var element = ".form-control";
     var gamescore = ".score-input";
     var ratingupdate = ".rating-update";
-    var button_dashboard="#button-dashboard";
-    $(document).ready(function() {
+    var button_dashboard = "#button-dashboard";
+    $(document).ready(function () {
         $(ratingupdate).hide();
         $(button_save).click(function () {
             $(element).prop('disabled', true);
@@ -143,7 +157,7 @@
             $(ratingupdate).show();
         });
         $(button_dashboard).click(function () {
-            window.location.href='index.html';
+            window.location.href = 'index.html';
         });
     });
 </script>
