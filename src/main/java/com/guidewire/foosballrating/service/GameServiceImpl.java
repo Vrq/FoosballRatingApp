@@ -5,9 +5,10 @@ import com.guidewire.foosballrating.domain.Game;
 import com.guidewire.foosballrating.persistence.GameMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,6 +26,7 @@ public class GameServiceImpl implements GameService {
 
     @Override
     public int insertGame(Game game) {
+        game.setDateOfGame(new Timestamp(new Date().getTime()));
         return gameMapper.insertGame(game);
     }
 
