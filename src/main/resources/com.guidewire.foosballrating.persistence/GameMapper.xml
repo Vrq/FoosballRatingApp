@@ -1,14 +1,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.lanyonm.playground.persistence.UserMapper">
+<mapper namespace="com.guidewire.foosballrating.persistence.GameMapper">
     <cache/>
 
     <select id="getAllGames" resultType="Game">
-        SELECT id, aPlayer1, aPlayer2, bPlayer1, bPlayer2, dateOfGame FROM games
+        SELECT id, aPlayer1, aPlayer2, bPlayer1, bPlayer2, aScore, bScore, dateOfGame FROM games
     </select>
 
     <insert id="insertGame" parameterType="Game">
-        INSERT INTO games (aPlayer1, aPlayer2, bPlayer1, bPlayer2, dateOfGame)
-        VALUES (#{aPlayer1}, #{aPlayer2}, #{bPlayer1}, #{bPlayer2}, #{dateOfGame})
+        INSERT INTO games (aPlayer1, aPlayer2, bPlayer1, bPlayer2, aScore, bScore, dateOfGame)
+        VALUES (#{aPlayer1}, #{aPlayer2}, #{bPlayer1}, #{bPlayer2}, #{aScore}, #{bScore}, #{dateOfGame})
     </insert>
 
     <update id="updateGame" parameterType="Game">
@@ -17,6 +17,8 @@
         aPlayer2 = #{aPlayer2},
         bPlayer1 = #{bPlayer1},
         bPlayer2 = #{bPlayer2},
+        aScore = #{aScore},
+        bScore = #{bScore},
         dateOfGame = #{dateOfGame}
         WHERE ID = #{id}
     </update>

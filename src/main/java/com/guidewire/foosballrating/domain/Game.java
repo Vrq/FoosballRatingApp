@@ -28,6 +28,12 @@ public class Game implements Serializable {
     @Getter
     @Setter
     private String bPlayer2;
+    @Getter
+    @Setter
+    private Integer aScore;
+    @Getter
+    @Setter
+    private Integer bScore;
 
     @Getter
     @Setter

@@ -10,6 +10,9 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 
 import javax.sql.DataSource;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.Date;
 
 @Configuration
 @MapperScan("org.lanyonm.playground.persistence")
@@ -27,8 +30,9 @@ public class DataConfig {
         JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
         System.out.println("Creating tables");
         jdbcTemplate.execute("drop table games if exists");
-        jdbcTemplate.execute("create table games(id NUMERIC, aPlayer1 varchar(255), aPlayer2 varchar(255), bPlayer1 varchar(255), bPlayer2 varchar(255), dateOfGame TIMESTAMP)");
-        //jdbcTemplate.update("INSERT INTO users(firstName, lastName, email) values (?,?,?)", "Mike", "Lanyon", "lanyonm@gmail.com");
+        jdbcTemplate.execute("create table games(id NUMERIC, aPlayer1 varchar(255), aPlayer2 varchar(255), bPlayer1 varchar(255), bPlayer2 varchar(255), aScore INTEGER , bScore INTEGER, dateOfGame TIMESTAMP)");
+        LocalDateTime dateTime = LocalDateTime.ofInstant(new Date().toInstant(), ZoneId.systemDefault());
+        jdbcTemplate.update("INSERT INTO users(aPlayer1, aPlayer2, bPlayer1, bPlayer2, aScore, bScore, dateOfGame) values (?,?,?,?,?,?,?)", "Marcin", "Lukasz", "Anastasiia", "Janusz", 3, 2, dateTime);
 
         return dataSource;
     }
