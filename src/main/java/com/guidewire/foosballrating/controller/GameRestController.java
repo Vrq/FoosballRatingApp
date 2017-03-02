@@ -1,16 +1,25 @@
 package com.guidewire.foosballrating.controller;
 
-import org.springframework.stereotype.Controller;
+import com.guidewire.foosballrating.domain.Game;
+import com.guidewire.foosballrating.persistence.GameMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 public class GameRestController {
 
+    final private GameMapper gameMapper;
+
+    public GameRestController(GameMapper cityMapper) {
+        this.gameMapper = cityMapper;
+    }
+
 
     @RequestMapping("/games")
-    public String games() {
-        return "Tutaj powinny byc zwrocone gry";
+    public List<Game> games() {
+        return gameMapper.getAllGames();
     }
 }
