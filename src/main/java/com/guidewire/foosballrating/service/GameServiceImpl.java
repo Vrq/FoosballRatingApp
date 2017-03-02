@@ -25,11 +25,11 @@ public class GameServiceImpl implements GameService {
 
     @Override
     public int insertGame(Game game) {
-        throw new NotImplementedException();
+        return gameMapper.insertGame(game);
     }
 
     @Override
     public int updateGame(Game game) {
-        throw new NotImplementedException();
+        return gameMapper.updateGame(game);
     }
 }
