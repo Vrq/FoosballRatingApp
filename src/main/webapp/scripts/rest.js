@@ -29,10 +29,16 @@ $(document).ready(function() {
       rankNo++;
     }
       $.ajax({
-      url: '/players',
+      url: '/players/getAll',
       type: 'GET',
       success: function(response) {
-        console.log(response)
+        for(playerRow of response) {
+          var rankNo = 1;
+          $("#rank-table").find("tr:gt(0)").remove();
+          console.log(playerRow)
+          $('#rank-table tr:last').after("<tr class='player-row' id='"+playerRow.username+"'><td>"+rankNo+"</td><td>"+playerRow.username+"</td><td>"+playerRow.points+"</td><td>"+playerRow.gamesWon+"</td><td>"+playerRow.gamesLost+"</td><td>"+playerRow.setsWon+" : "+playerRow.setsLost+"</td></tr>");
+          rankNo++;
+        }
       }
     });
   });
