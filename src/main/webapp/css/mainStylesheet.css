@@ -60,3 +60,19 @@ body {
 h1, h2, h3 {
     color: #FB667A;
 }
+
+h3 {
+    color: #4DC3FA;
+}
+
+input[type="text"] {
+    width: 20px;
+}
+
+.open>.dropdown-menu {
+    color: #A7A1AE;
+}
+
+.form-control{
+    width: 200px;
+}
