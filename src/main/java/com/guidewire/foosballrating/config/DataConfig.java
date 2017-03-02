@@ -1,7 +1,6 @@
 package com.guidewire.foosballrating.config;
 
 
-import org.apache.ibatis.mapping.Environment;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +18,7 @@ import java.time.ZoneId;
 import java.util.Date;
 
 @Configuration
-@MapperScan("org.lanyonm.playground.persistence")
+@MapperScan("com.guidewire.foosballrating.persistence")
 public class DataConfig {
 
     @Autowired
