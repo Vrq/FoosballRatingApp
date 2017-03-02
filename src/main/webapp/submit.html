@@ -2,91 +2,70 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Submit your game score</title>
+    <title>Foosball Rating App</title>
     <link rel="icon" href="img/favicon.ico">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
 <div class="score-input">
-    <div class="page-header">
-        <h1>Submit your game score</h1>
-    </div>
-    <div class="row">
-        <h3>Team 1</h3>
-        <div class="col-sm-4 col-md-4 col-lg-4">
-            <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu11" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="true">
-                    Player 1
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu11">
-                    <li><a href="#">Janusz</a></li>
-                    <li><a href="#">Ania</a></li>
-                    <li><a href="#">Lukasz</a></li>
-                </ul>
+    <div class="container">
+        <div class="page-header">
+            <h1>Submit your game score</h1>
+        </div>
+        <div class="row">
+            <h3>Team 1</h3>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <select class="form-control">
+                    <option>Choose player</option>
+                    <option>Ania</option>
+                    <option>Janusz</option>
+                    <option>Lukasz</option>
+                </select>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <select class="form-control">
+                    <option>Choose player</option>
+                    <option>Ania</option>
+                    <option>Janusz</option>
+                    <option>Lukasz</option>
+                </select>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4 input-group">
+                <!-- <span class="input-group-addon">Score 1</span>-->
+                <input type="text" class="form-control" id="usr1">
             </div>
         </div>
-        <div class="col-sm-4 col-md-4 col-lg-4">
-            <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu12" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="true">
-                    Player 2
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
-                    <li><a href="#">Janusz</a></li>
-                    <li><a href="#">Ania</a></li>
-                    <li><a href="#">Lukasz</a></li>
-                </ul>
+        <div class="row">
+            <h3>Team 2</h3>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <select class="form-control">
+                    <option>Choose player</option>
+                    <option>Ania</option>
+                    <option>Janusz</option>
+                    <option>Lukasz</option>
+                </select>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+
+                <select class="form-control">
+                    <option>Choose player</option>
+                    <option>Ania</option>
+                    <option>Janusz</option>
+                    <option>Lukasz</option>
+                </select>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4 input-group">
+                <!--<span class="input-group-addon">Score 2</span>-->
+                <input type="text" class="form-control" id="usr">
             </div>
         </div>
-        <div class="col-sm-4 col-md-4 col-lg-4 input-group">
-           <!-- <span class="input-group-addon">Score 1</span>-->
-            <input type="text" class="form-control" id="usr1">
+        <div class="row">
+            <button id="button" type="button" class="btn btn-default btn-lg">
+                <!--   <span class="glyphicon glyphicon-star" aria-hidden="true"></span> -->
+                Save
+            </button>
         </div>
-    </div>
-    <div class="row">
-        <h3>Team 2</h3>
-        <div class="col-sm-4 col-md-4 col-lg-4">
-            <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu21" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="true">
-                    Player 3
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu21">
-                    <li><a href="#">Janusz</a></li>
-                    <li><a href="#">Ania</a></li>
-                    <li><a href="#">Lukasz</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-sm-4 col-md-4 col-lg-4">
-            <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu22" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="true">
-                    Player 4
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu22">
-                    <li><a href="#">Janusz</a></li>
-                    <li><a href="#">Ania</a></li>
-                    <li><a href="#">Lukasz</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-sm-4 col-md-4 col-lg-4 input-group">
-            <!--<span class="input-group-addon">Score 2</span>-->
-            <input type="text" class="form-control" id="usr">
-        </div>
-    </div>
-    <div class="row">
-        <button id="button" type="button" class="btn btn-default btn-lg">
-            <!--   <span class="glyphicon glyphicon-star" aria-hidden="true"></span> -->
-            Save
-        </button>
     </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
