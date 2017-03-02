@@ -49,12 +49,14 @@ body {
 }
 
 .row {
-    margin: 50px auto;
+    margin: 30px auto;
 }
 
 .form-control {
     background-color: #2C3446;
     color: #A7A1AE;
+    font-size: 20px;
+    height: auto;
 }
 
 h1, h2, h3 {
@@ -69,10 +71,11 @@ input[type="text"] {
     width: 20px;
 }
 
-.open>.dropdown-menu {
-    color: #A7A1AE;
+.form-control {
+    width: 200px;
 }
 
-.form-control{
-    width: 200px;
+select {
+    -webkit-appearance: none;
+    font-size: 20px;
 }
