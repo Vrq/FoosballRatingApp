@@ -10,10 +10,10 @@ body {
 }
 
 .table-container {
-    font-size: 40px;
+    font-size: 20px;
     text-align: left;
-    width: 80%;
-    height: 200px;
+    width: 70%;
+    height: 300px;
     margin: 400 auto;
     display: table;
     padding: 0 0 8em 0;
@@ -57,6 +57,6 @@ body {
     color: #A7A1AE;
 }
 
-h1, h2 {
+h1, h2, h3 {
     color: #FB667A;
 }

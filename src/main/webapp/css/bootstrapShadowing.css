@@ -5,7 +5,6 @@
     background-color: #323C50;
 }
 .nav-sidebar a {
-    color: red;
     -webkit-transition: all 0.08s linear;
     -moz-transition: all 0.08s linear;
     -o-transition: all 0.08s linear;
@@ -17,6 +16,12 @@
     color: #fff;
 }
 .nav-sidebar .active a:hover {
+  background-color: #464A52;
+}
+.nav-sidebar > ul > li > a:hover{
+  background-color: #464A52;
+}
+.nav-sidebar a:hover {
     background-color: #464A52;
 }
 .nav-sidebar .text-overflow a,
