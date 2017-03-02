@@ -17,14 +17,14 @@ public class RatingServiceImpl implements RatingService {
 
     @Override
     public void updateRatings(Game game) {
-        updatePlayerRating(playerService.getPlayer(game.getaPlayer1()));
-        updatePlayerRating(playerService.getPlayer(game.getaPlayer2()));
-        updatePlayerRating(playerService.getPlayer(game.getbPlayer1()));
-        updatePlayerRating(playerService.getPlayer(game.getbPlayer2()));
+        updatePlayerRating(playerService.getPlayer(game.getaPlayer1()), game);
+        updatePlayerRating(playerService.getPlayer(game.getaPlayer2()), game);
+        updatePlayerRating(playerService.getPlayer(game.getbPlayer1()), game);
+        updatePlayerRating(playerService.getPlayer(game.getbPlayer2()), game);
     }
 
-    private void updatePlayerRating(Player player) {
-        player.setPoints(ratingCalculator.calcuatePlayerRating(player));
+    private void updatePlayerRating(Player player, Game game) {
+        player.setPoints(ratingCalculator.calcuatePlayerRating(player, game));
         playerService.updatePlayer(player);
     }
 }

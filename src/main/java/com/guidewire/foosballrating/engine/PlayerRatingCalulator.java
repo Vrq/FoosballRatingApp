@@ -1,6 +1,7 @@
 package com.guidewire.foosballrating.engine;
 
 
+import com.guidewire.foosballrating.domain.Game;
 import com.guidewire.foosballrating.domain.Player;
 
 public class PlayerRatingCalulator implements RatingCalculator {
@@ -10,7 +11,7 @@ public class PlayerRatingCalulator implements RatingCalculator {
         return 100;
     }
 
-    public int calcuatePlayerRating(Player player) {
+    public int calcuatePlayerRating(Player player, Game game) {
         return 123;
     }
 }
