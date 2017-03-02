@@ -5,16 +5,16 @@ import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
-@Mapper
+//@Mapper
 public interface PlayerMapper {
 
     String insert = "INSERT INTO players (username, gamesWon, gamesLost, setsWon, setsLost, points) VALUES (#{username}, 0, 0, 0, 0, 100)";
     String update = "UPDATE players SET gamesWon = #{gamesWon}, gamesLost = #{gamesLost}, setsWon = #{setsWon}, setsLost = #{setsLost}, points = #{rank} WHERE username = #{username}";
 
-    @Select("SELECT * from players ORDER BY rank")
+    @Select("SELECT * from players ORDER BY points desc")
     List<Player> getAllPlayers();
 
-    @Select("SELECT * FROM players ORDER BY rank limit 10")
+    @Select("SELECT * FROM players ORDER BY points desc limit 10")
     List<Player> getBest10();
 
     @Insert(insert)
