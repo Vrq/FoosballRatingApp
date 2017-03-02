@@ -5,7 +5,7 @@ import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
-@Mapper
+//@Mapper
 public interface GameMapper {
 
     String insert = "INSERT INTO games (aPlayer1, aPlayer2, bPlayer1, bPlayer2, aScore, bScore, dateOfGame) VALUES (#{aPlayer1}, #{aPlayer2}, #{bPlayer1}, #{bPlayer2}, #{aScore}, #{bScore}, #{dateOfGame})";
