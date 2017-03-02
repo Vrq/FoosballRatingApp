@@ -15,32 +15,32 @@
     <div class="col-sm-3">
         <nav class="nav-sidebar">
             <ul class="nav tabs">
-                <li class="active"><a href="#tab1" data-toggle="tab"><h3>Ranking</h3></a></li>
-                <li class=""><a href="#tab2" data-toggle="tab"><h3>Individual stats</h3></a></li>
-                <li class=""><a href="#tab3" data-toggle="tab"><h3>Global stats</h3></a></li>
+                <li class="active"><a href="#tab-rank" id="li-tab-rank" data-toggle="tab"><h3>Ranking</h3></a></li>
+                <li class=""><a href="#tab-player-stats"  id="li-tab-player-stats" data-toggle="tab"><h3>Individual stats</h3></a></li>
+                <li class="" id="li-tab-global-stats"><a href="#tab-global-stats" data-toggle="tab"><h3>Global stats</h3></a></li>
             </ul>
         </nav>
     </div>
     <div class="tab-content">
-        <div class="tab-pane active text-style" id="tab1">
+        <div class="tab-pane active text-style" id="tab-rank">
             <h2>Player Rating Ranking</h2>
             <table class="table-container table table-inverse table-responsive">
                 <tbody>
                 <tr>
                     <td>No.</td>
-                    <td>Player</td>
+                    <td>Player-name</td>
                     <td>ELO</td>
                     <td>Wins</td>
                     <td>Loses</td>
                 </tr>
-                <tr>
+                <tr id="player-id1" class="player-row">
                     <td>1</td>
                     <td>Player1</td>
                     <td>100000</td>
                     <td>444</td>
                     <td>1</td>
                 </tr>
-                <tr>
+                <tr id="player-id2" class="player-row">
                     <td>2</td>
                     <td>Player2</td>
                     <td>100</td>
@@ -64,16 +64,16 @@
                 </tbody>
             </table>
         </div>
-        <div class="tab-pane text-style" id="tab2">
+        <div class="tab-pane text-style" id="tab-player-stats">
             <h2>stats</h2>
             <p>Individual stats</p>
+            <button type="button" class="btn btn-primary btn-lg" id="backToRankButton">Back</button>
         </div>
-        <div class="tab-pane text-style" id="tab3">
+        <div class="tab-pane text-style" id="tab-global-stats">
             <h2>global stats</h2>
             <p>global stats</p>
         </div>
     </div>
-    <button type="button" class="btn btn-primary btn-lg" id="rankButton">GET rank</button>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
