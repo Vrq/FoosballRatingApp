@@ -1,18 +1,23 @@
 package com.guidewire.foosballrating.persistence;
 
 import com.guidewire.foosballrating.domain.Game;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
 @Mapper
 public interface GameMapper {
 
+    String insert = "INSERT INTO games (aPlayer1, aPlayer2, bPlayer1, bPlayer2, aScore, bScore, dateOfGame) VALUES (#{aPlayer1}, #{aPlayer2}, #{bPlayer1}, #{bPlayer2}, #{aScore}, #{bScore}, #{dateOfGame})";
+    String update = "UPDATE games SET aPlayer1 = #{aPlayer1}, aPlayer2 = #{aPlayer2}, bPlayer1 = #{bPlayer1}, bPlayer2 = #{bPlayer2}, aScore = #{aScore}, bScore = #{bScore}, dateOfGame = #{dateOfGame} WHERE ID = #{id}";
+
     @Select("SELECT * FROM games")
-    public List<Game> getAllGames();
+    List<Game> getAllGames();
 
-    public int insertGame(Game game);
+    @Insert(insert)
+    @Options(useGeneratedKeys = true, keyProperty = "id")
+    int insertGame(Game game);
 
-    public int updateGame(Game game);
+    @Update(update)
+    int updateGame(Game game);
 }
