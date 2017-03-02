@@ -36,7 +36,6 @@
                 </select>
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4 input-group">
-                <!-- <span class="input-group-addon">Score 1</span>-->
                 <input type="text" class="form-control" id="usr1">
             </div>
         </div>
@@ -64,15 +63,64 @@
                 </select>
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4 input-group">
-                <!--<span class="input-group-addon">Score 2</span>-->
                 <input type="text" class="form-control" id="usr">
             </div>
         </div>
         <div class="row">
-            <button id="button" type="button" class="btn btn-default btn-lg">
-                <!--   <span class="glyphicon glyphicon-star" aria-hidden="true"></span> -->
+            <button id="button-save" type="button" class="btn btn-default btn-lg">
                 Save
             </button>
+        </div>
+    </div>
+</div>
+
+<div class="rating-update">
+    <div class="container">
+        <div class="page-header">
+            <h1>Ranking update</h1>
+        </div>
+        <div class="row">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Moved in rank</th>
+                    <th>Previous score</th>
+                    <th>Current score</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th class="player">Player 1</th>
+                    <td></td>
+                    <td>100</td>
+                    <td>102</td>
+                </tr>
+                <tr>
+                    <th class="player">Player 2</th>
+                    <td></td>
+                    <td>100</td>
+                    <td>102</td>
+                </tr>
+                <tr>
+                    <th class="player">Player 3</th>
+                    <td></td>
+                    <td>100</td>
+                    <td>102</td>
+                </tr>
+                <tr>
+                    <th class="player">Player 4</th>
+                    <td></td>
+                    <td>100</td>
+                    <td>102</td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="row">
+                <button id="button-dashboard" type="button" class="btn btn-default btn-lg">
+                    Go to main page
+                </button>
+            </div>
         </div>
     </div>
 </div>
@@ -81,6 +129,24 @@
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
 <script type="text/javascript" src="scripts/sample.js" charset="utf-8"></script>
+<script>
+    var button_save = "#button-save";
+    var element = ".form-control";
+    var gamescore = ".score-input";
+    var ratingupdate = ".rating-update";
+    var button_dashboard="#button-dashboard";
+    $(document).ready(function() {
+        $(ratingupdate).hide();
+        $(button_save).click(function () {
+            $(element).prop('disabled', true);
+            $(gamescore).hide();
+            $(ratingupdate).show();
+        });
+        $(button_dashboard).click(function () {
+            window.location.href='index.html';
+        });
+    });
+</script>
 <link rel="stylesheet" type="text/css" href="css/bootstrapShadowing.css">
 <link rel="stylesheet" type="text/css" href="css/mainStylesheet.css">
 </body>

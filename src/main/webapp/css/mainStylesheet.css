@@ -33,17 +33,17 @@ body {
     background-color: #464A52;
 }
 
-.dropdown button {
-    color: #A7A1AE;
-    background-color: #2C3446;
-}
+/*.dropdown button {*/
+/*color: #A7A1AE;*/
+/*background-color: #2C3446;*/
+/*}*/
 
-.dropdown ul {
-    color: #A7A1AE;
-    background-color: #2C3446;
-}
+/*.dropdown ul {*/
+/*color: #A7A1AE;*/
+/*background-color: #2C3446;*/
+/*}*/
 
-#button {
+#button-save, #button-dashboard{
     color: #A7A1AE;
     background-color: #2C3446;
 }
@@ -77,5 +77,17 @@ input[type="text"] {
 
 select {
     -webkit-appearance: none;
+    font-size: 20px;
+}
+
+.form-control[disabled] {
+    background-color: #2C3446;
+}
+
+th.player{
+    color: #4DC3FA;
+}
+
+table{
     font-size: 20px;
 }
