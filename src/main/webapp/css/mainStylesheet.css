@@ -33,25 +33,30 @@ body {
     background-color: #464A52;
 }
 
-.dropdown button{
+.dropdown button {
     color: #A7A1AE;
     background-color: #2C3446;
 }
 
-.dropdown ul{
+.dropdown ul {
     color: #A7A1AE;
     background-color: #2C3446;
 }
 
-#button{
+#button {
     color: #A7A1AE;
     background-color: #2C3446;
 }
 
-.row{
+.row {
     margin: 50px auto;
 }
 
-.form-control{
+.form-control {
     background-color: #2C3446;
+    color: #A7A1AE;
+}
+
+h1, h2 {
+    color: #FB667A;
 }
