@@ -33,9 +33,10 @@ body {
     background-color: #464A52;
 }
 
-#button-save, #button-dashboard {
+#button-save, #button-dashboard, #button-back, #button-input {
     color: #A7A1AE;
     background-color: #2C3446;
+    margin: 0 10px auto;
 }
 
 .row {
@@ -87,10 +88,21 @@ select option {
     background-color: #2C3446;
     color: #A7A1AE;
 }
-#title-header{
-  text-align: center;
+
+#title-header {
+    text-align: center;
 }
+
 #rank-table_filter {
-  text-align: center;
+    text-align: center;
+
+}
+
+#qrcode {
+    float: right;
+    height: 50px;
+    width: 50px;
+    /*vertical-align: bottom;*/
+    align: center;
 
 }

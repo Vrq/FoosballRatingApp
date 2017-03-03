@@ -11,47 +11,55 @@
 <body>
 
 <div class="container">
-  <div class="row">
-    <nav class="custom-nav">
-          <ul class="nav nav-pills">
-              <li class="active"><a href="#tab-rank" id="li-tab-rank" data-toggle="tab"><h3>Ranking</h3></a></li>
-              <li class=""><a href="#tab-player-stats" id="li-tab-player-stats" data-toggle="tab"><h3>Individual
-                  stats</h3></a></li>
-              <li class="" id="li-tab-global-stats"><a href="#tab-global-stats" data-toggle="tab"><h3>Global
-                  stats</h3></a></li>
-          </ul>
-    </nav>
-  </div>
+    <div class="row">
+        <nav class="custom-nav">
+            <ul class="nav nav-pills">
+                <li class="active"><a href="#tab-rank" id="li-tab-rank" data-toggle="tab"><h3>Ranking</h3></a></li>
+                <li class=""><a href="#tab-player-stats" id="li-tab-player-stats" data-toggle="tab"><h3>Individual
+                    stats</h3></a></li>
+                <li class="" id="li-tab-global-stats"><a href="#tab-global-stats" data-toggle="tab"><h3>Global
+                    stats</h3></a></li>
+                <img id="qrcode" src="img/QRCode.png">
+            </ul>
 
-    <div class="tab-content">
-        <div class="tab-pane active text-style" id="tab-rank">
-            <h1 id="title-header">Player Rating Ranking</h1>
-            <div class="row">
+        </nav>
+    </div>
+
+    <div class="row">
+        <div class="tab-content">
+            <div class="tab-pane active text-style" id="tab-rank">
+                <h1 id="title-header">Player Rating Ranking</h1>
                 <table class="table-container table table-inverse table-responsive" id="rank-table">
                     <thead>
-                        <tr>
-                            <th>Rank</th>
-                            <th>Name</th>
-                            <th>Rating</th>
-                            <th>Wins</th>
-                            <th>Loses</th>
-                            <th>Sets</th>
-                        </tr>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Name</th>
+                        <th>Rating</th>
+                        <th>Wins</th>
+                        <th>Loses</th>
+                        <th>Sets</th>
+                    </tr>
                     </thead>
                     <tbody>
                     </tbody>
                 </table>
             </div>
+            <div class="tab-pane text-style" id="tab-player-stats">
+                <h2>Individual stats</h2>
+                <div id="player-stats-div"></div>
+                <button id="button-back" type="button" class="btn btn-default btn-lg" id="backToRankButton">Back
+                </button>
+            </div>
+            <div class="tab-pane text-style" id="tab-global-stats">
+                <h2>global stats</h2>
+                <p>global stats</p>
+            </div>
         </div>
-        <div class="tab-pane text-style" id="tab-player-stats">
-            <h2>Individual stats</h2>
-            <div id="player-stats-div"></div>
-            <button type="button" class="btn btn-primary btn-lg" id="backToRankButton">Back</button>
-        </div>
-        <div class="tab-pane text-style" id="tab-global-stats">
-            <h2>global stats</h2>
-            <p>global stats</p>
-        </div>
+    </div>
+    <div class="row">
+        <button id="button-input" type="button" class="btn btn-default btn-lg">
+            Go to score input
+        </button>
     </div>
 </div>
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
