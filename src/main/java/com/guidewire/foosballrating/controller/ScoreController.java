@@ -21,26 +21,22 @@ public class ScoreController {
     private ScoreService scoreService;
 
     @RequestMapping(value = "/insertScore", method = RequestMethod.POST)
-    public ResponseEntity<String> getAllScoreForPlayer(@RequestParam("score") Score score) {
+    public void getAllScoreForPlayer(@RequestParam("score") Score score) {
         scoreService.insertScore(score);
-        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @RequestMapping(value = "/allScoresForPlayer", method = RequestMethod.GET)
-    public ResponseEntity<List<Score>> getAllScoreForPlayer(@RequestParam("playerName") String playerName) {
-        List<Score> result = scoreService.getAllScoreForPlayer(playerName);
-        return new ResponseEntity<>(result, HttpStatus.OK);
+    public List<Score> getAllScoreForPlayer(@RequestParam("playerName") String playerName) {
+        return scoreService.getAllScoreForPlayer(playerName);
     }
 
     @RequestMapping(value = "/latestScoreForPlayer", method = RequestMethod.GET)
-    public ResponseEntity<Score> getLatestScoreForPlayer(@RequestParam("playerName") String playerName) {
-        Score result = scoreService.getLatestScoreForPlayer(playerName);
-        return new ResponseEntity<>(result, HttpStatus.OK);
+    public Score getLatestScoreForPlayer(@RequestParam("playerName") String playerName) {
+        return scoreService.getLatestScoreForPlayer(playerName);
     }
 
     @RequestMapping(value = "/scoreForPlayerInTime", method = RequestMethod.GET)
-    public ResponseEntity<List<Score>> getScoreForPlayerInTime(@RequestParam("playerName") String playerName, @RequestParam("startDate") Date startDate, @RequestParam("endDate") Date endDate) {
-        List<Score> result = scoreService.getScoreForPlayerInTime(playerName, startDate, endDate);
-        return new ResponseEntity<>(result, HttpStatus.OK);
+    public List<Score> getScoreForPlayerInTime(@RequestParam("playerName") String playerName, @RequestParam("startDate") Date startDate, @RequestParam("endDate") Date endDate) {
+        return scoreService.getScoreForPlayerInTime(playerName, startDate, endDate);
     }
 }

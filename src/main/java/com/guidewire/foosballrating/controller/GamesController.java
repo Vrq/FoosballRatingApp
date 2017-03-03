@@ -20,15 +20,13 @@ public class GamesController {
     private GameService gameService;
 
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
-    public ResponseEntity<List<Game>> getAllGames() {
-        List<Game> result = gameService.getAllGames();
-        return new ResponseEntity<>(result, HttpStatus.OK);
+    public List<Game> getAllGames() {
+        return gameService.getAllGames();
     }
 
     @RequestMapping(value = "/insertGame", method = RequestMethod.POST)
-    public ResponseEntity<String> insertGame(@RequestParam("game") Game game) {
+    public void insertGame(@RequestParam("game") Game game) {
         gameService.insertGame(game);
-        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 }

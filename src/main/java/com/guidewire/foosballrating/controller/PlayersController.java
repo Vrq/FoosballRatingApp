@@ -30,25 +30,22 @@ public class PlayersController {
     private RatingCalculator ratingCalculator = new PlayerRatingCalulator();
 
     @RequestMapping(value = "/getById", method = RequestMethod.GET)
-    public ResponseEntity<Player> getPlayer(@RequestParam("id") int id) {
-        Player player = playerService.getPlayer(id);
-        return new ResponseEntity<>(player, HttpStatus.OK);
+    public Player getPlayer(@RequestParam("id") int id) {
+        return playerService.getPlayer(id);
     }
 
     @RequestMapping(value = "/getByUsername", method = RequestMethod.GET)
-    public ResponseEntity<Player> getPlayer(@RequestParam("username") String username) {
-        Player player = playerService.getPlayer(username);
-        return new ResponseEntity<>(player, HttpStatus.OK);
+    public Player getPlayer(@RequestParam("username") String username) {
+        return playerService.getPlayer(username);
     }
 
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
-    public ResponseEntity<List<Player>> getAllPlayers() {
-        List<Player> result = playerService.getAllPlayers();
-        return new ResponseEntity<>(result, HttpStatus.OK);
+    public List<Player> getAllPlayers() {
+        return playerService.getAllPlayers();
     }
 
     @RequestMapping(value = "/insertPlayer", method = RequestMethod.POST)
-    public ResponseEntity<String> insertPlayer(@RequestParam("player") Player player) {
+    public void insertPlayer(@RequestParam("player") Player player) {
         int points = ratingCalculator.startingRating();
 
         player.setPoints(points);
@@ -59,13 +56,10 @@ public class PlayersController {
         score.setPoints(points);
         score.setCreationTime(new Date());
         scoreService.insertScore(score);
-
-        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @RequestMapping(value = "/updatePlayer", method = RequestMethod.POST)
-    public ResponseEntity<String> updatePlayer(@RequestParam("player") Player player) {
+    public void updatePlayer(@RequestParam("player") Player player) {
         playerService.updatePlayer(player);
-        return new ResponseEntity<>(HttpStatus.OK);
     }
 }
