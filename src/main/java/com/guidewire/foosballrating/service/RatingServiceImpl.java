@@ -62,10 +62,14 @@ public class RatingServiceImpl implements RatingService {
 
         if (setsWon > setsLost) { // Win
             player.setGamesWon((Optional.ofNullable(player.getGamesWon()).orElse(0) + 1));
+            player.setWinCount(player.getWinCount() + 1);
+            player.setLossCount(0);
         }
 
         if (setsWon < setsLost) { // Lose
             player.setGamesLost((Optional.ofNullable(player.getGamesLost()).orElse(0) + 1));
+            player.setLossCount(player.getLossCount() + 1);
+            player.setWinCount(0);
         }
 
         // Draw
