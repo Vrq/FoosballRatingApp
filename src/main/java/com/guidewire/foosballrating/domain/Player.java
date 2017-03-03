@@ -4,7 +4,9 @@ import java.io.Serializable;
 
 public class Player implements Serializable {
 
-    private int id;
+    private static final long serialVersionUID = 1L;
+
+    private long id;
     private String username;
     private int gamesWon;
     private int gamesLost;
@@ -12,11 +14,12 @@ public class Player implements Serializable {
     private int setsLost;
     private int points;
 
-    public int getId() {
+
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

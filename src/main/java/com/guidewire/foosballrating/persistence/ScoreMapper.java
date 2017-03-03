@@ -11,7 +11,7 @@ import java.util.List;
 
 public interface ScoreMapper {
 
-    String selectBetweenDates = "SEELCT * FROM scores WHERE username=#{username} AND creationTime BETWEEN #{from} AND #{to}";
+    String selectBetweenDates = "SELECT * FROM scores WHERE username=#{username} AND creationTime BETWEEN #{from} AND #{to}";
     String insert = "INSERT INTO scores (username, rank, points, creationTime) VALUES (#{username}, #{rank}, #{points}, #{creationTime})";
 
     @Select("SELECT * FROM scores WHERE username=#{username} ORDER BY creationTime DESC LIMIT 1")
