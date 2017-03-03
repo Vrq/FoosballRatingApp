@@ -37,18 +37,20 @@ public class RatingServiceImpl implements RatingService {
         Player bPlayer2 = playerService.getPlayer(game.getbPlayer2());
         updatePlayerStats(bPlayer2, game.getbScore(), game.getaScore());
 
-        updatePlayerRating(aPlayer1, game);
-        updatePlayerRating(aPlayer2, game);
-        updatePlayerRating(bPlayer1, game);
-        updatePlayerRating(bPlayer2, game);
+        int p1 = updatePlayerRating(aPlayer1, game);
+        int p2 = updatePlayerRating(aPlayer2, game);
+        int p3 = updatePlayerRating(bPlayer1, game);
+        int p4 = updatePlayerRating(bPlayer2, game);
+        addScore(aPlayer1.getUsername(), p1);
+        addScore(aPlayer2.getUsername(), p2);
+        addScore(bPlayer1.getUsername(), p3);
+        addScore(bPlayer2.getUsername(), p4);
     }
 
-    private void updatePlayerRating(Player player, Game game) {
+    private int updatePlayerRating(Player player, Game game) {
         player.setPoints(ratingCalculator.calcuatePlayerPoints(player, game));
         playerService.updatePlayer(player);
-        int rank = playerService.getAllPlayers().stream().map(e -> e.getUsername()).collect(Collectors.toList()).indexOf(player.getUsername());
-        Score score = new Score(player.getUsername(), rank , player.getPoints());
-        scoreService.insertScore(score);
+        return player.getPoints();
     }
 
     private void updatePlayerStats(Player player, Integer setsWon, Integer setsLost) {
@@ -67,5 +69,11 @@ public class RatingServiceImpl implements RatingService {
         }
 
         // Draw
+    }
+
+    private void addScore(String username, int points) {
+        int rank = playerService.getAllPlayers().stream().map(e -> e.getUsername()).collect(Collectors.toList()).indexOf(username);
+        Score score = new Score(username, rank, points);
+        scoreService.insertScore(score);
     }
 }
