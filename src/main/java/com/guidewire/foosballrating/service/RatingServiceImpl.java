@@ -30,7 +30,7 @@ public class RatingServiceImpl implements RatingService {
     private void updatePlayerRating(Player player, Game game) {
         player.setPoints(ratingCalculator.calcuatePlayerPoints(player, game));
         playerService.updatePlayer(player);
-        int rank = playerService.getPlayerRank(player.getUsername());
+        int rank = playerService.getAllPlayers().lastIndexOf(player) + 1;
         Score score = new Score(player.getUsername(), rank , player.getPoints());
         scoreService.insertScore(score);
     }
