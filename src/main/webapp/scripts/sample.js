@@ -8,14 +8,18 @@ var button_add_player = "#button_add_player";
 var username_input = "#username_input";
 
 $(document).ready(function () {
+    $(document).click(function () {
+        $("#username_alert").hide();
+        $("#username_add").hide();
+    });
     $(ratingupdate).hide();
     $(button_save).click(function () {
         $(gamescore).hide();
         $(ratingupdate).show();
-        var player1=$("#player1").find(':selected').text();
-        var player2=$("#player2").find(':selected').text();
-        var player3=$("#player3").find(':selected').text();
-        var player4=$("#player4").find(':selected').text();
+        var player1 = $("#player1").find(':selected').text();
+        var player2 = $("#player2").find(':selected').text();
+        var player3 = $("#player3").find(':selected').text();
+        var player4 = $("#player4").find(':selected').text();
         var playersArray = [player1, player2, player3, player4];
         console.log(playersArray)
         var json = {
@@ -78,18 +82,17 @@ $(document).ready(function () {
         window.location.href = 'index.html';
     });
 
-    // MOVE SOMEWHERE
     $(username_input).on('keydown', function () {
         $("#username_alert").hide();
+        $("#username_add").hide();
     });
 
     $(button_add_player).click(function () {
+        $("#username_add").hide();
         var username = $("#username_input").val();
-
         var json = {
             username: username
         };
-
         $.ajax({
             url: '/players/insertPlayer',
             type: 'POST',
@@ -97,7 +100,7 @@ $(document).ready(function () {
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function (data) {
-                console.log("OK");
+                $("#username_add").show();
             },
             error: function () {
                 $("#username_alert").show();

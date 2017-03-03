@@ -34,6 +34,11 @@
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
                 </select>
             </div>
         </div>
@@ -58,13 +63,34 @@
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
                 </select>
             </div>
         </div>
         <div class="row">
-            <button id="button-save" type="button" class="btn btn-default btn-lg">
-                Save
-            </button>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <button id="button-save" type="button" class="btn btn-default btn-lg">
+                    Save
+                </button>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4 col-lg-offset-4">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="add-username-input" placeholder="New user name..."
+                           id="username_input">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" id="button_add_player">Create</button>
+                    </span>
+                </div>
+                <div id="username_alert" class="alert alert-danger" role="alert" style="display:none;">Username already
+                    taken
+                </div>
+                <div id="username_add" class="alert alert-info" role="alert" style="display:none;">Username added
+                </div>
+            </div>
         </div>
     </div>
 
