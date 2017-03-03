@@ -3,8 +3,8 @@ create table players (id int primary key auto_increment, username varchar(255) U
 create table scores (id int primary key auto_increment, username varchar(255), rank INTEGER , points INTEGER, creationTime TIMESTAMP);
 
 insert into games (aPlayer1, aPlayer2, bPlayer1, bPlayer2, aScore, bScore, dateOfGame) values ('Marcin', 'Janusz', 'Lukasz', 'Anastasiia', 3, 2, CURRENT_TIMESTAMP());
-insert into players (username, gamesWon, gamesLost, setsWon, setsLost, points) values ('Marcin', 1, 0, 3, 2, 125);
-insert into players (username, gamesWon, gamesLost, setsWon, setsLost, points) values ('Lukasz', 1, 0, 3, 2, 232);
-insert into players (username, gamesWon, gamesLost, setsWon, setsLost, points) values ('Anastasiia', 2, 0, 3, 2, 125);
-insert into players (username, gamesWon, gamesLost, setsWon, setsLost, points) values ('Janusz', 1, 0, 3, 2, 123);
-insert into players (username, gamesWon, gamesLost, setsWon, setsLost, points) values ('Ania', 1, 0, 3, 2, 543);
+insert into players (username, gamesWon, gamesLost, setsWon, setsLost, points) values ('Marcin', 1, 0, 3, 2, 100);
+insert into players (username, gamesWon, gamesLost, setsWon, setsLost, points) values ('Lukasz', 1, 0, 3, 2, 100);
+insert into players (username, gamesWon, gamesLost, setsWon, setsLost, points) values ('Anastasiia', 2, 0, 3, 2, 100);
+insert into players (username, gamesWon, gamesLost, setsWon, setsLost, points) values ('Janusz', 1, 0, 3, 2, 100);
+insert into players (username, gamesWon, gamesLost, setsWon, setsLost, points) values ('Ania', 1, 0, 3, 2, 100);
