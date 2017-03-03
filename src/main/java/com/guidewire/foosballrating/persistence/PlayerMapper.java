@@ -12,7 +12,7 @@ public interface PlayerMapper {
     String update = "UPDATE players SET gamesWon = #{gamesWon}, gamesLost = #{gamesLost}, setsWon = #{setsWon}, setsLost = #{setsLost}, points = #{points} WHERE username = #{username}";
     String selectRank = "SELECT z.rank FROM (SELECT username, points, gamesWon, setsWon, rownum() as rank FROM players ORDER BY points DESC , gamesWon DESC, setsWon DESC) as z WHERE username=#{username}";
 
-    @Select("SELECT * from players ORDER BY points DESC , gamesWon DESC, setsWon DESC")
+    @Select("SELECT * from players ORDER BY points DESC, gamesWon DESC, setsWon DESC username ASC")
     List<Player> getAllPlayers();
 
     @Select("SELECT * FROM players ORDER BY points desc limit 10")
