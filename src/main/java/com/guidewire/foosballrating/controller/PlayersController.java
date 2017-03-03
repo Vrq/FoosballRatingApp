@@ -46,6 +46,9 @@ public class PlayersController {
 
     @RequestMapping(value = "/insertPlayer", method = RequestMethod.POST)
     public ResponseEntity<Player> insertPlayer(@RequestBody Player player) {
+        if(!playerService.isUsernameAvailable(player.getUsername())){
+            return new ResponseEntity<>(HttpStatus.FORBIDDEN);
+        }
         int points = ratingCalculator.startingRating();
 
         player.setPoints(points);

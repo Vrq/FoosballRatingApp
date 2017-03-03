@@ -3,10 +3,13 @@ var element = ".form-control";
 var gamescore = ".score-input";
 var ratingupdate = ".rating-update";
 var button_dashboard = "#button-dashboard";
+var button_input = "#button-input";
+var button_add_player = "#button_add_player";
+var username_input = "#username_input";
+
 $(document).ready(function () {
     $(ratingupdate).hide();
     $(button_save).click(function () {
-        $(element).prop('disabled', true);
         $(gamescore).hide();
         $(ratingupdate).show();
         var player1=$("#player1").find(':selected').text();
@@ -73,5 +76,36 @@ $(document).ready(function () {
     });
     $(button_dashboard).click(function () {
         window.location.href = 'index.html';
+    });
+
+    // MOVE SOMEWHERE
+    $(username_input).on('keydown', function () {
+        $("#username_alert").hide();
+    });
+
+    $(button_add_player).click(function () {
+        var username = $("#username_input").val();
+
+        var json = {
+            username: username
+        };
+
+        $.ajax({
+            url: '/players/insertPlayer',
+            type: 'POST',
+            data: JSON.stringify(json),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                console.log("OK");
+            },
+            error: function () {
+                $("#username_alert").show();
+                console.log("FAIL");
+            }
+        });
+    });
+    $(button_input).click(function () {
+        window.location.href = 'submit.html';
     });
 });
