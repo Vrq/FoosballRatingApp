@@ -1,35 +1,48 @@
+
 $(document).ready(function () {
 
     let allSelectors = new Set();
-    allSelectors.add("#selected-1");
-    allSelectors.add("#selected-2");
-    allSelectors.add("#selected-3");
-    allSelectors.add("#selected-4");
+    allSelectors.add("#player1");
+    allSelectors.add("#player2");
+    allSelectors.add("#player3");
+    allSelectors.add("#player4");
 
     let previousSelectedMap = new Map();
 
     for (let selector of allSelectors) {
         $(selector).change(function () {
-            iterateThroughAllAndRemoveSelected(selector);
+            iterateThroughAllAndRemoveSelected(selector)
         })
     }
 
     function iterateThroughAllAndRemoveSelected(inputThatWasChanged) {
-        let previousSelection = previousSelectedMap.get(inputThatWasChanged);
+        console.log("inputThatWasChanged= " + inputThatWasChanged);
+        let previousSelection = previousSelectedMap[inputThatWasChanged];
+        console.log("previousSelection " + previousSelection);
         if (previousSelection != undefined) {
             for (let selector of allSelectors) {
-                $(selector).append($("<option></option>").text(previousSelection));
+                if(getOptionContainingFromSelector(selector, previousSelection).length <= 0){
+                    addOptionToSelector(selector, previousSelection);
+                }
             }
         }
 
         let selectedPlayer = getSelectedPlayer(inputThatWasChanged);
         previousSelectedMap[inputThatWasChanged] = selectedPlayer;
         for (let selector of allSelectors) {
-            if(selector == inputThatWasChanged){
+            if (selector == inputThatWasChanged) {
                 continue;
             }
-            $(selector + " option:contains(\'" + selectedPlayer +"\')").remove();
+            getOptionContainingFromSelector(selector, selectedPlayer).remove();
         }
+    }
+
+    function addOptionToSelector(selector, text) {
+        $(selector).append($("<option></option>").text(text));
+    }
+
+    function getOptionContainingFromSelector(selector, text){
+        return $(selector + " option:contains(\'" + text + "\')")
     }
 
     function getSelectedPlayer(id) {
