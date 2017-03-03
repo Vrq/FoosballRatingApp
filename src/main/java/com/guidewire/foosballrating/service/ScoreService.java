@@ -14,6 +14,8 @@ public interface ScoreService {
 
     public Score getLatestScoreForPlayer(String playerName);
 
+    public Score getPreviousScoreForPlayer(String playerName);
+
     public List<Score> getScoreForPlayerInTime(String playerName, Date startDate, Date endDate);
 
 }

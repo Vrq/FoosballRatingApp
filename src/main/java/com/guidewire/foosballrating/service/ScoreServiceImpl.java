@@ -30,6 +30,11 @@ public class ScoreServiceImpl implements ScoreService {
     }
 
     @Override
+    public Score getPreviousScoreForPlayer(String playerName) {
+        return scoreMapper.getPreviousScore(playerName);
+    }
+
+    @Override
     public List<Score> getScoreForPlayerInTime(String playerName, Date startDate, Date endDate) {
         return scoreMapper.getScoresBetweenDates(playerName, startDate, endDate);
     }

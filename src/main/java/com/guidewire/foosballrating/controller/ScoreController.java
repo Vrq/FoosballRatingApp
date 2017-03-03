@@ -26,6 +26,12 @@ public class ScoreController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/previousScoreForPlayer", method = RequestMethod.GET)
+    public ResponseEntity<Score> getPreviousScoreForPlayer(@RequestParam("playerName") String playerName) {
+        Score result = scoreService.getPreviousScoreForPlayer(playerName);
+        return new ResponseEntity<>(result, HttpStatus.OK);
+    }
+
     @RequestMapping(value = "/latestScoreForPlayer", method = RequestMethod.GET)
     public ResponseEntity<Score> getLatestScoreForPlayer(@RequestParam("playerName") String playerName) {
         Score result = scoreService.getLatestScoreForPlayer(playerName);
