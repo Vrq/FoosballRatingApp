@@ -3,12 +3,15 @@ var element = ".form-control";
 var gamescore = ".score-input";
 var ratingupdate = ".rating-update";
 var button_dashboard = "#button-dashboard";
+var button_input = "#button-input";
 $(document).ready(function () {
     $(ratingupdate).hide();
+    //$(button_input).hide();
     $(button_save).click(function () {
         $(element).prop('disabled', true);
         $(gamescore).hide();
         $(ratingupdate).show();
+        //$(button_input).show();
         var player1=$("#player1").find(':selected').text();
         var player2=$("#player2").find(':selected').text();
         var player3=$("#player3").find(':selected').text();
@@ -41,5 +44,8 @@ $(document).ready(function () {
     });
     $(button_dashboard).click(function () {
         window.location.href = 'index.html';
+    });
+    $(button_input).click(function () {
+        window.location.href = 'submit.html';
     });
 });

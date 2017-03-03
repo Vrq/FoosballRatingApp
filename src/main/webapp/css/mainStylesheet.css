@@ -33,9 +33,10 @@ body {
     background-color: #464A52;
 }
 
-#button-save, #button-dashboard {
+#button-save, #button-dashboard, #button-back, #button-input {
     color: #A7A1AE;
     background-color: #2C3446;
+    margin: 0 10px auto;
 }
 
 .row {
