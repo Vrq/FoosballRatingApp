@@ -41,7 +41,7 @@ public class PlayerRatingCalulator implements RatingCalculator {
 
     private int decreasePoints(Player player, Game game) {
 
-        int result = (int) Math.round(player.getPoints() - (calculateScoreFactor(game) * multiplierFactor));
+        int result = (int) Math.round(player.getPoints() - (calculateScoreFactor(game) * multiplierFactor) / 2);
         return result < 0 ? 0 : result;
     }
 
