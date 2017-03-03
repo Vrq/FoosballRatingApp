@@ -11,7 +11,7 @@ public class PlayerRatingCalulator implements RatingCalculator {
 
     @Override
     public int startingRating() {
-        return 100;
+        return 0;
     }
 
     @Override
