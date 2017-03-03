@@ -6,11 +6,14 @@ var button_dashboard = "#button-dashboard";
 $(document).ready(function () {
     $(ratingupdate).hide();
     $(button_save).click(function () {
-        $(element).prop('disabled', true);
-        $(gamescore).hide();
+       $(element).prop('disabled', true);
+       $(gamescore).hide();
         $(ratingupdate).show();
+        console.log('siema')
+        console.log($("#player1").find(':selected').text())
     });
     $(button_dashboard).click(function () {
         window.location.href = 'index.html';
     });
+
 });
