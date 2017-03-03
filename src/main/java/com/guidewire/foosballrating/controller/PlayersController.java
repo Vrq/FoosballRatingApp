@@ -1,7 +1,11 @@
 package com.guidewire.foosballrating.controller;
 
 import com.guidewire.foosballrating.domain.Player;
+import com.guidewire.foosballrating.domain.Score;
+import com.guidewire.foosballrating.engine.PlayerRatingCalulator;
+import com.guidewire.foosballrating.engine.RatingCalculator;
 import com.guidewire.foosballrating.service.PlayerService;
+import com.guidewire.foosballrating.service.ScoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +22,11 @@ public class PlayersController {
 
     @Autowired
     private PlayerService playerService;
+
+    @Autowired
+    private ScoreService scoreService;
+
+    private RatingCalculator ratingCalculator = new PlayerRatingCalulator();
 
     @RequestMapping(value = "/getById", method = RequestMethod.GET)
     public ResponseEntity<Player> getPlayer(@RequestParam("id") int id) {
@@ -39,7 +48,14 @@ public class PlayersController {
 
     @RequestMapping(value = "/insertPlayer", method = RequestMethod.POST)
     public ResponseEntity<String> insertPlayer(@RequestParam("player") Player player) {
+        int points = ratingCalculator.startingRating();
+
+        player.setPoints(points);
         playerService.insertPlayer(player);
+
+        Score score = new Score();
+        scoreService.insertScore(score);
+
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

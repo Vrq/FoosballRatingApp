@@ -2,8 +2,6 @@ package com.guidewire.foosballrating.service;
 
 
 import com.guidewire.foosballrating.domain.Player;
-import com.guidewire.foosballrating.engine.PlayerRatingCalulator;
-import com.guidewire.foosballrating.engine.RatingCalculator;
 import com.guidewire.foosballrating.persistence.PlayerMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,8 +14,6 @@ public class PlayerServiceImpl implements PlayerService {
 
     @Autowired
     private PlayerMapper playerMapper;
-
-    private RatingCalculator ratingCalculator = new PlayerRatingCalulator();
 
     @Override
     public Player getPlayer(int id) {
@@ -37,7 +33,7 @@ public class PlayerServiceImpl implements PlayerService {
     @Override
     public int insertPlayer(Player player) {
         //TODO change implementation
-        return playerMapper.insertPlayer(player.getUsername(), ratingCalculator.startingRating());
+        return playerMapper.insertPlayer(player.getUsername(), player.getPoints());
     }
 
     @Override

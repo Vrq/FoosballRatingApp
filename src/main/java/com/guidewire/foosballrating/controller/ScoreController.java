@@ -20,6 +20,12 @@ public class ScoreController {
     @Autowired
     private ScoreService scoreService;
 
+    @RequestMapping(value = "/insertScore", method = RequestMethod.POST)
+    public ResponseEntity<String> getAllScoreForPlayer(@RequestParam("score") Score score) {
+        scoreService.insertScore(score);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
     @RequestMapping(value = "/allScoresForPlayer", method = RequestMethod.GET)
     public ResponseEntity<List<Score>> getAllScoreForPlayer(@RequestParam("playerName") String playerName) {
         List<Score> result = scoreService.getAllScoreForPlayer(playerName);
