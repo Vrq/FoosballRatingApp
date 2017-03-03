@@ -4,35 +4,26 @@
     <meta charset="utf-8">
     <title>Foosball Rating App</title>
     <link rel="icon" href="img/favicon.ico">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrapShadowing.css">
+    <link rel="stylesheet" type="text/css" href="css/mainStylesheet.css">
 </head>
 <body>
-<div class="score-input">
-    <div class="container">
+<div class="container">
+    <div class="score-input">
         <div class="page-header">
             <h1>Submit your game score</h1>
         </div>
         <div class="row">
             <h3>Team 1</h3>
             <div class="col-sm-4 col-md-4 col-lg-4">
-                <select class="form-control">
+                <select class="form-control players">
                     <option>Player 1</option>
-                    <option>Ania</option>
-                    <option>Anastasiia</option>
-                    <option>Marcin</option>
-                    <option>Janusz</option>
-                    <option>Lukasz</option>
                 </select>
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4">
-                <select class="form-control">
+                <select class="form-control players">
                     <option>Player 2</option>
-                    <option>Ania</option>
-                    <option>Anastasiia</option>
-                    <option>Marcin</option>
-                    <option>Janusz</option>
-                    <option>Lukasz</option>
                 </select>
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4 input-group">
@@ -49,24 +40,14 @@
         <div class="row">
             <h3>Team 2</h3>
             <div class="col-sm-4 col-md-4 col-lg-4">
-                <select class="form-control">
+                <select class="form-control players">
                     <option>Player 3</option>
-                    <option>Ania</option>
-                    <option>Anastasiia</option>
-                    <option>Marcin</option>
-                    <option>Janusz</option>
-                    <option>Lukasz</option>
                 </select>
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4">
 
-                <select class="form-control">
+                <select class="form-control players">
                     <option>Player 4</option>
-                    <option>Ania</option>
-                    <option>Anastasiia</option>
-                    <option>Marcin</option>
-                    <option>Janusz</option>
-                    <option>Lukasz</option>
                 </select>
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4 input-group">
@@ -86,10 +67,8 @@
             </button>
         </div>
     </div>
-</div>
 
-<div class="rating-update">
-    <div class="container">
+    <div class="rating-update">
         <div class="page-header">
             <h1>Ranking update</h1>
         </div>
@@ -106,15 +85,15 @@
                 <tbody>
                 <tr>
                     <th class="player">Player 1</th>
-                    <td></td>
+                    <td><span class="glyphicon glyphicon-arrow-up glyphicon-move-up" aria-hidden="true"></span></td>
                     <td>100</td>
                     <td>102</td>
                 </tr>
                 <tr>
                     <th class="player">Player 2</th>
-                    <td></td>
+                    <td><span class="glyphicon glyphicon-arrow-down glyphicon-move-down" aria-hidden="true"></span></td>
                     <td>100</td>
-                    <td>102</td>
+                    <td>99</td>
                 </tr>
                 <tr>
                     <th class="player">Player 3</th>
@@ -130,38 +109,20 @@
                 </tr>
                 </tbody>
             </table>
-            <div class="row">
-                <button id="button-dashboard" type="button" class="btn btn-default btn-lg">
-                    Go to main page
-                </button>
-            </div>
         </div>
+
+    </div>
+    <div class="row">
+        <button id="button-dashboard" type="button" class="btn btn-default btn-lg">
+            Go to main page
+        </button>
     </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
+
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="node_modules/datatables.net/js/jquery.dataTables.js"></script>
 <script type="text/javascript" src="scripts/sample.js" charset="utf-8"></script>
-<script>
-    var button_save = "#button-save";
-    var element = ".form-control";
-    var gamescore = ".score-input";
-    var ratingupdate = ".rating-update";
-    var button_dashboard = "#button-dashboard";
-    $(document).ready(function () {
-        $(ratingupdate).hide();
-        $(button_save).click(function () {
-            $(element).prop('disabled', true);
-            $(gamescore).hide();
-            $(ratingupdate).show();
-        });
-        $(button_dashboard).click(function () {
-            window.location.href = 'index.html';
-        });
-    });
-</script>
-<link rel="stylesheet" type="text/css" href="css/bootstrapShadowing.css">
-<link rel="stylesheet" type="text/css" href="css/mainStylesheet.css">
+<script type="text/javascript" src="scripts/rest.js" charset="utf-8"></script>
 </body>
 </html>
