@@ -50,7 +50,7 @@ public class PlayerRatingCalulator implements RatingCalculator {
     }
 
     private double calculateScoreFactor(Game game) {
-        return diffScoreFactor * (game.getaScore() - game.getbScore());
+        return diffScoreFactor * Math.abs(game.getaScore() - game.getbScore());
     }
 
     private boolean isTeamAPlayer(Player player, Game game) {
