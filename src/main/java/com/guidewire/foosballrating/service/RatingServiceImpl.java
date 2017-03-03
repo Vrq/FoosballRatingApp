@@ -8,6 +8,8 @@ import com.guidewire.foosballrating.engine.RatingCalculator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.stream.Collectors;
+
 @Service
 public class RatingServiceImpl implements RatingService {
 
@@ -30,7 +32,7 @@ public class RatingServiceImpl implements RatingService {
     private void updatePlayerRating(Player player, Game game) {
         player.setPoints(ratingCalculator.calcuatePlayerPoints(player, game));
         playerService.updatePlayer(player);
-        int rank = playerService.getAllPlayers().lastIndexOf(player) + 1;
+        int rank = playerService.getAllPlayers().stream().map(e -> e.getUsername()).collect(Collectors.toList()).indexOf(player.getUsername());
         Score score = new Score(player.getUsername(), rank , player.getPoints());
         scoreService.insertScore(score);
     }
