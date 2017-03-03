@@ -17,7 +17,8 @@ public class ScoreController {
     @Autowired
     private ScoreService scoreService;
 
-    @RequestMapping(value = "/insertScore", method = RequestMethod.POST)
+    @RequestMapping(value = "/insertScore", method = RequestMethod.POST, headers = "Accept=application/json")
+
     public ResponseEntity<String> getAllScoreForPlayer(@RequestBody Score score) {
         scoreService.insertScore(score);
         return new ResponseEntity<>(HttpStatus.OK);
