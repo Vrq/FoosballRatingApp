@@ -33,7 +33,7 @@ body {
     background-color: #464A52;
 }
 
-#button-save, #button-dashboard, #button-back, #button-input {
+#button-save, #button-dashboard, #button-back, #button-input, #button_add_player {
     color: #A7A1AE;
     background-color: #2C3446;
     margin: 0 10px auto;
@@ -104,5 +104,4 @@ select option {
     width: 50px;
     /*vertical-align: bottom;*/
     align: center;
-
 }
