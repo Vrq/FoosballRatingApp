@@ -26,9 +26,9 @@ public class GamesController {
     }
 
     @RequestMapping(value = "/insertGame", method = RequestMethod.POST)
-    public ResponseEntity<String> insertGame(@RequestBody Game game) {
+    public ResponseEntity<Game> insertGame(@RequestBody Game game) {
         gameService.insertGame(game);
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(game, HttpStatus.OK);
     }
 
 }
