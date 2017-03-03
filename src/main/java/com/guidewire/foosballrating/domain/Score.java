@@ -4,17 +4,26 @@ import java.util.Date;
 
 public class Score {
 
-    private long id;
+    private int id;
     private String username;
     private int rank;
     private int points;
     private Date creationTime;
 
-    public long getId() {
+    public Score(){}
+
+    public Score(String username, int rank, int points){
+        this.username = username;
+        this.rank = rank;
+        this.points = points;
+        this.creationTime = new Date();
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

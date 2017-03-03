@@ -18,4 +18,6 @@ public interface PlayerService {
     public int updatePlayer(Player player);
 
     boolean isUsernameAvailable(String username);
+
+    int getPlayerRank(String username);
 }
