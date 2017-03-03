@@ -89,7 +89,7 @@ $(document).ready(function () {
 
     $(button_add_player).click(function () {
         $("#username_add").hide();
-        var username = $("#username_input").val();
+        var username = $("#add-username-input").val();
         var json = {
             username: username
         };
