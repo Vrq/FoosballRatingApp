@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class PlayerServiceImpl implements PlayerService {
@@ -44,6 +45,11 @@ public class PlayerServiceImpl implements PlayerService {
     @Override
     public boolean isUsernameAvailable(String username) {
         return playerMapper.getByUsername(username) == null;
+    }
+
+    @Override
+    public int getPlayerRank(String username) {
+        return getAllPlayers().stream().map(e -> e.getUsername()).collect(Collectors.toList()).indexOf(username) + 1;
     }
 
 }

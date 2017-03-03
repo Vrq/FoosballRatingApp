@@ -58,6 +58,7 @@ public class PlayersController {
         score.setUsername(player.getUsername());
         score.setPoints(points);
         score.setCreationTime(new Date());
+        score.setRank(playerService.getPlayerRank(player.getUsername()));
         scoreService.insertScore(score);
 
         return new ResponseEntity<>(player, HttpStatus.OK);

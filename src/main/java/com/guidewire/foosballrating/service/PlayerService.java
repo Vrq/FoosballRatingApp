@@ -19,4 +19,6 @@ public interface PlayerService {
 
     boolean isUsernameAvailable(String username);
 
+    int getPlayerRank(String username);
+
 }

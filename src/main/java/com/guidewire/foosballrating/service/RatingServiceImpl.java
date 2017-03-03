@@ -76,7 +76,7 @@ public class RatingServiceImpl implements RatingService {
     }
 
     private void addScore(String username, int points) {
-        int rank = playerService.getAllPlayers().stream().map(e -> e.getUsername()).collect(Collectors.toList()).indexOf(username) + 1;
+        int rank = playerService.getPlayerRank(username);
         Score score = new Score(username, rank, points);
         scoreService.insertScore(score);
     }
