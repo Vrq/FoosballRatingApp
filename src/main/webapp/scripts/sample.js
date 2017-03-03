@@ -8,6 +8,20 @@ var button_add_player = "#button_add_player";
 var username_input = "#username_input";
 
 $(document).ready(function () {
+    function repopulatePlayerSelections() {
+        $.ajax({
+            url: '/players/getAll',
+            type: 'GET',
+            success: function (response) {
+                $('.players').empty();
+                $('.players').append($("<option selected disabled></option>").text("Select player"));
+                for (playerRow of response) {
+                    $('.players').append($("<option></option>").text(playerRow.username));
+                }
+            }
+        });
+    }
+
     $(document).click(function () {
         $("#username_alert").hide();
         $("#username_add").hide();
@@ -101,6 +115,7 @@ $(document).ready(function () {
             dataType: "json",
             success: function (data) {
                 $("#username_add").show();
+                repopulatePlayerSelections();
             },
             error: function () {
                 $("#username_alert").show();
