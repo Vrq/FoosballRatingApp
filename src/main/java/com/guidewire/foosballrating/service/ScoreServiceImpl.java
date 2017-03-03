@@ -4,6 +4,7 @@ import com.guidewire.foosballrating.domain.Score;
 import com.guidewire.foosballrating.persistence.ScoreMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.Date;
 import java.util.List;
