@@ -3,7 +3,6 @@ var element = ".form-control";
 var gamescore = ".score-input";
 var ratingupdate = ".rating-update";
 var button_dashboard = "#button-dashboard";
-var player1 = "#player1";
 $(document).ready(function () {
     $(ratingupdate).hide();
     $(button_save).click(function () {
