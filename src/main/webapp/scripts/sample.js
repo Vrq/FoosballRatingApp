@@ -13,6 +13,8 @@ $(document).ready(function () {
         var player2=$("#player2").find(':selected').text();
         var player3=$("#player3").find(':selected').text();
         var player4=$("#player4").find(':selected').text();
+        var playersArray = [player1, player2, player3, player4];
+        console.log(playersArray)
         var json = {
             aPlayer1: player1,
             aPlayer2: player2,
@@ -28,10 +30,40 @@ $(document).ready(function () {
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function(data){
-                console.log("OK");
+                console.log("Game inserted");
+                for(player of playersArray) {
+                  $.ajax({
+                    url: '/scores/latestScoreForPlayer?playerName=' + player,
+                    type: 'GET',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function(dataLatest) {
+                      $.ajax({
+                        url: '/scores/previousScoreForPlayer?playerName=' + dataLatest.username,
+                        type: 'GET',
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function(dataPrevious) {
+                          var arrowClass;
+                          if(dataLatest.rank < dataPrevious.rank) {
+                            arrowClass = "glyphicon-arrow-up glyphicon-move-up";
+                          } else {
+                            if(dataLatest.rank > dataPrevious.rank) {
+                              arrowClass = "glyphicon-arrow-down glyphicon-move-down";
+                            } else {
+                              arrowClass = "glyphicon-arrow-right";
+                            }
+                          }
+                          console.log(arrowClass)
+                          $("#rankUpdateTable tbody").append("<tr class='player'><th>" + dataLatest.username + "</th><td><span class='glyphicon "+arrowClass+"'></span></td><td>"+dataPrevious.points+"</td><td>" + dataLatest.points + "</td></tr>");
+                        }
+                      });
+                    }
+                  });
+                }
             },
             failure: function() {
-                console.log("FAIL");
+                console.log("Game insert failure");
             }
         });
         $("#username1").text(player1);
