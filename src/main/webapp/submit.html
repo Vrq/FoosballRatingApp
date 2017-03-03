@@ -16,23 +16,13 @@
         <div class="row">
             <h3>Team 1</h3>
             <div class="col-sm-4 col-md-4 col-lg-4">
-                <select class="form-control">
+                <select class="form-control players">
                     <option>Player 1</option>
-                    <option>Ania</option>
-                    <option>Anastasiia</option>
-                    <option>Marcin</option>
-                    <option>Janusz</option>
-                    <option>Lukasz</option>
                 </select>
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4">
-                <select class="form-control">
+                <select class="form-control players">
                     <option>Player 2</option>
-                    <option>Ania</option>
-                    <option>Anastasiia</option>
-                    <option>Marcin</option>
-                    <option>Janusz</option>
-                    <option>Lukasz</option>
                 </select>
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4 input-group">
@@ -49,24 +39,14 @@
         <div class="row">
             <h3>Team 2</h3>
             <div class="col-sm-4 col-md-4 col-lg-4">
-                <select class="form-control">
+                <select class="form-control players">
                     <option>Player 3</option>
-                    <option>Ania</option>
-                    <option>Anastasiia</option>
-                    <option>Marcin</option>
-                    <option>Janusz</option>
-                    <option>Lukasz</option>
                 </select>
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4">
 
-                <select class="form-control">
+                <select class="form-control players">
                     <option>Player 4</option>
-                    <option>Ania</option>
-                    <option>Anastasiia</option>
-                    <option>Marcin</option>
-                    <option>Janusz</option>
-                    <option>Lukasz</option>
                 </select>
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4 input-group">
@@ -142,26 +122,9 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-<script type="text/javascript" src="scripts/sample.js" charset="utf-8"></script>
-<script>
-    var button_save = "#button-save";
-    var element = ".form-control";
-    var gamescore = ".score-input";
-    var ratingupdate = ".rating-update";
-    var button_dashboard = "#button-dashboard";
-    $(document).ready(function () {
-        $(ratingupdate).hide();
-        $(button_save).click(function () {
-            $(element).prop('disabled', true);
-            $(gamescore).hide();
-            $(ratingupdate).show();
-        });
-        $(button_dashboard).click(function () {
-            window.location.href = 'index.html';
-        });
-    });
-</script>
 <link rel="stylesheet" type="text/css" href="css/bootstrapShadowing.css">
 <link rel="stylesheet" type="text/css" href="css/mainStylesheet.css">
+<script type="text/javascript" src="scripts/sample.js" charset="utf-8"></script>
+<script type="text/javascript" src="scripts/rest.js" charset="utf-8"></script>
 </body>
 </html>
