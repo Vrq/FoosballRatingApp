@@ -7,7 +7,6 @@ var button_input = "#button-input";
 $(document).ready(function () {
     $(ratingupdate).hide();
     $(button_save).click(function () {
-        $(element).prop('disabled', true);
         $(gamescore).hide();
         $(ratingupdate).show();
         var player1=$("#player1").find(':selected').text();
