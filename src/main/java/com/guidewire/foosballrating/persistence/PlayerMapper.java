@@ -11,7 +11,7 @@ public interface PlayerMapper {
     String insert = "INSERT INTO players (username, gamesWon, gamesLost, setsWon, setsLost, points, winCount, lossCount) " +
             "VALUES (#{username}, #{gamesWon}, #{gamesLost}, #{setsWon}, #{setsLost}, #{points}, #{winCount}, #{lossCount})";
     String update = "UPDATE players SET gamesWon = #{gamesWon}, gamesLost = #{gamesLost}, setsWon = #{setsWon}, setsLost = #{setsLost}," +
-            " points = #{points} winCount = #{winCount}, lossCount=#{lossCount} WHERE username = #{username}";
+            " points = #{points}, winCount = #{winCount}, lossCount=#{lossCount} WHERE username = #{username}";
 
     @Select("SELECT * from players ORDER BY points DESC, gamesWon DESC, setsWon DESC, username ASC")
     List<Player> getAllPlayers();
