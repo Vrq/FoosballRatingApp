@@ -45,7 +45,7 @@ public class PlayersController {
     }
 
     @RequestMapping(value = "/insertPlayer", method = RequestMethod.POST)
-    public ResponseEntity<String> insertPlayer(@RequestBody Player player) {
+    public ResponseEntity<Player> insertPlayer(@RequestBody Player player) {
         int points = ratingCalculator.startingRating();
 
         player.setPoints(points);
@@ -57,12 +57,12 @@ public class PlayersController {
         score.setCreationTime(new Date());
         scoreService.insertScore(score);
 
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(player, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/updatePlayer", method = RequestMethod.POST)
-    public ResponseEntity<String> updatePlayer(@RequestBody Player player) {
+    public ResponseEntity<Player> updatePlayer(@RequestBody Player player) {
         playerService.updatePlayer(player);
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(player, HttpStatus.OK);
     }
 }
