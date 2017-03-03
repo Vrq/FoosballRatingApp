@@ -1,10 +1,7 @@
 package com.guidewire.foosballrating.persistence;
 
 import com.guidewire.foosballrating.domain.Player;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Options;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
