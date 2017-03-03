@@ -13,11 +13,12 @@ public interface ScoreMapper {
 
     String selectBetweenDates = "SELECT * FROM scores WHERE username=#{username} AND creationTime BETWEEN #{from} AND #{to}";
     String insert = "INSERT INTO scores (username, rank, points, creationTime) VALUES (#{username}, #{rank}, #{points}, #{creationTime})";
+    String selectPrevious = "SELECT * FROM scores WHERE username=#{username} ORDER BY creationTime DESC LIMIT 1 OFFSET 1";
 
     @Select("SELECT * FROM scores WHERE username=#{username} ORDER BY creationTime DESC LIMIT 1")
     Score getLatestScoreForPlayer(@Param("username") String username);
 
-    @Select("SELECT * FROM scores WHERE username=#{username}")
+    @Select("SELECT * FROM scores WHERE username=#{username} ORDER BY creationTime DESC")
     List<Score> getAllScores(@Param("username") String username);
 
     @Select(selectBetweenDates)
@@ -26,4 +27,7 @@ public interface ScoreMapper {
     @Insert(insert)
     @Options(useGeneratedKeys = true, keyProperty = "id")
     int insertScore(Score score);
+
+    @Select(selectPrevious)
+    Score getPreviousScore(@Param("username")String username);
 }
