@@ -11,6 +11,11 @@ import java.util.List;
 public class ScoreServiceImpl implements ScoreService {
 
     @Override
+    public int insertScore(Score score) {
+        throw new NotImplementedException();
+    }
+
+    @Override
     public List<Score> getAllScoreForPlayer(String playerName) {
         throw new NotImplementedException();
     }
