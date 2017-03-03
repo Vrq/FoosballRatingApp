@@ -8,7 +8,7 @@ import java.util.List;
 //@Mapper
 public interface PlayerMapper {
 
-    String insert = "INSERT INTO players (username, gamesWon, gamesLost, setsWon, setsLost, points) VALUES (#{username}, 0, 0, 0, 0, 100)";
+    String insert = "INSERT INTO players (username, gamesWon, gamesLost, setsWon, setsLost, points) VALUES (#{username}, 0, 0, 0, 0, #{points})";
     String update = "UPDATE players SET gamesWon = #{gamesWon}, gamesLost = #{gamesLost}, setsWon = #{setsWon}, setsLost = #{setsLost}, points = #{rank} WHERE username = #{username}";
 
     @Select("SELECT * from players ORDER BY points desc")
@@ -19,7 +19,7 @@ public interface PlayerMapper {
 
     @Insert(insert)
     @Options(useGeneratedKeys = true, keyProperty = "id")
-    int insertPlayer(@Param("username")String username);
+    int insertPlayer(@Param("username") String username, @Param("points") int points);
 
     @Select("Select * from players where username=#{username}")
     Player getByUsername(String username);

@@ -37,7 +37,7 @@ public class PlayerServiceImpl implements PlayerService {
     @Override
     public int insertPlayer(Player player) {
         //TODO change implementation
-        return playerMapper.insertPlayer(player.getUsername());
+        return playerMapper.insertPlayer(player.getUsername(), ratingCalculator.startingRating());
     }
 
     @Override

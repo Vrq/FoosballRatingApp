@@ -24,7 +24,7 @@ public class RatingServiceImpl implements RatingService {
     }
 
     private void updatePlayerRating(Player player, Game game) {
-        player.setPoints(ratingCalculator.calcuatePlayerRating(player, game));
+        player.setPoints(ratingCalculator.calcuatePlayerPoints(player, game));
         playerService.updatePlayer(player);
     }
 }

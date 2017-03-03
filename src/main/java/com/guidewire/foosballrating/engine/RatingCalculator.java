@@ -7,6 +7,6 @@ public interface RatingCalculator {
 
     public int startingRating();
 
-    public int calcuatePlayerRating(Player player, Game game);
+    public int calcuatePlayerPoints(Player player, Game game);
 
 }
