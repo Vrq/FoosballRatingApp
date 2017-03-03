@@ -1,43 +1,33 @@
-$(document).ready(function() {
-  $.ajax({
-  url: '/players/getAll',
-  type: 'GET',
-  success: function(response) {
-    $("#rank-table").find("tr:gt(0)").remove();
-    var rankNo = 1;
-    for(playerRow of response) {
-      $('#rank-table tbody').append("<tr class='player-row' id='"+playerRow.username+"'><td>"+rankNo+"</td><td>"+playerRow.username+"</td><td>"+playerRow.points+"</td><td>"+playerRow.gamesWon+"</td><td>"+playerRow.gamesLost+"</td><td>"+playerRow.setsWon+" : "+playerRow.setsLost+"</td></tr>");
-      rankNo++;
-      $('.players').append($("<option></option>").text(playerRow.username));
-    }
-    $('#rank-table').DataTable({
-       "lengthChange": false,
-       "paging": false,
-       "info": false,
-    //   "dom": -f'<"toolbar">rtip' // TODO: fix this to move search box to the middle
-     });
+$(document).ready(function () {
+    let rankTableID = "#rank-table";
+    let rankTableBody = '#rank-table tbody';
+    let tableSettings = {
+        "lengthChange": false,
+        "paging": false,
+        "info": false,
+        //   "dom": -f'<"toolbar">rtip' // TODO: fix this to move search box to the middle
+    };
 
-  }
-  });
-
-    $("#backToRankButton").click(function () {
-        $("#li-tab-rank").click()
-    });
-
-    $("#li-tab-rank").click(function () {
-        console.log("elo")
+    function populateTable() {
         $.ajax({
             url: '/players/getAll',
             type: 'GET',
             success: function (response) {
-                $("#rank-table").find("tr:gt(0)").remove();
+                $(rankTableID).find("tr:gt(0)").remove();
                 var rankNo = 1;
                 for (playerRow of response) {
-                    $('#rank-table tr:last').after("<tr class='player-row' id='" + playerRow.username + "'><td>" + rankNo + "</td><td>" + playerRow.username + "</td><td>" + playerRow.points + "</td><td>" + playerRow.gamesWon + "</td><td>" + playerRow.gamesLost + "</td><td>" + playerRow.setsWon + " : " + playerRow.setsLost + "</td></tr>");
+                    $(rankTableBody).append("<tr class='player-row' id='" + playerRow.username + "'><td>" + rankNo + "</td><td>" + playerRow.username + "</td><td>" + playerRow.points + "</td><td>" + playerRow.gamesWon + "</td><td>" + playerRow.gamesLost + "</td><td>" + playerRow.setsWon + " : " + playerRow.setsLost + "</td></tr>");
                     rankNo++;
+                    $('.players').append($("<option></option>").text(playerRow.username));
                 }
+                let table = $(rankTableID).DataTable(tableSettings);
             }
         });
+    }
+    populateTable();
+
+    $("#backToRankButton").click(function () {
+        $("#li-tab-rank").click()
     });
 
     $("body").on("click", ".player-row", function (event) {
