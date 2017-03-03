@@ -6,6 +6,7 @@
     <link rel="icon" href="img/favicon.ico">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css">
 </head>
 <body>
 <div class="score-input">
@@ -16,13 +17,9 @@
         <div class="row">
             <h3>Team 1</h3>
             <div class="col-sm-4 col-md-4 col-lg-4">
-                <select class="form-control">
-                    <option>Player 1</option>
-                    <option>Ania</option>
-                    <option>Anastasiia</option>
-                    <option>Marcin</option>
-                    <option>Janusz</option>
-                    <option>Lukasz</option>
+                <select class="form-control" id="player1">
+                <option>Player 2</option>
+
                 </select>
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4">
@@ -106,15 +103,15 @@
                 <tbody>
                 <tr>
                     <th class="player">Player 1</th>
-                    <td></td>
+                    <td><span class="glyphicon glyphicon-arrow-up glyphicon-move-up" aria-hidden="true"></span></td>
                     <td>100</td>
                     <td>102</td>
                 </tr>
                 <tr>
                     <th class="player">Player 2</th>
-                    <td></td>
+                    <td><span class="glyphicon glyphicon-arrow-down glyphicon-move-down" aria-hidden="true"></span></td>
                     <td>100</td>
-                    <td>102</td>
+                    <td>99</td>
                 </tr>
                 <tr>
                     <th class="player">Player 3</th>
@@ -142,7 +139,10 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 <script type="text/javascript" src="scripts/sample.js" charset="utf-8"></script>
+<script type="text/javascript" src="scripts/rest.js" charset="utf-8"></script>
 <script>
     var button_save = "#button-save";
     var element = ".form-control";

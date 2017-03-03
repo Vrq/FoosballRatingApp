@@ -6,37 +6,42 @@
     <link rel="icon" href="img/favicon.ico">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css">
+
     <link rel="stylesheet" type="text/css" href="css/bootstrapShadowing.css">
     <link rel="stylesheet" type="text/css" href="css/mainStylesheet.css">
 </head>
 <body>
 
 <div class="container">
-    <div class="col-sm-3">
-        <nav class="nav-sidebar">
-            <ul class="nav tabs">
-                <li class="active"><a href="#tab-rank" id="li-tab-rank" data-toggle="tab"><h3>Ranking</h3></a></li>
-                <li class=""><a href="#tab-player-stats" id="li-tab-player-stats" data-toggle="tab"><h3>Individual
-                    stats</h3></a></li>
-                <li class="" id="li-tab-global-stats"><a href="#tab-global-stats" data-toggle="tab"><h3>Global
-                    stats</h3></a></li>
-            </ul>
-        </nav>
-    </div>
+  <div class="row">
+    <nav class="custom-nav">
+          <ul class="nav nav-pills">
+              <li class="active"><a href="#tab-rank" id="li-tab-rank" data-toggle="tab"><h3>Ranking</h3></a></li>
+              <li class=""><a href="#tab-player-stats" id="li-tab-player-stats" data-toggle="tab"><h3>Individual
+                  stats</h3></a></li>
+              <li class="" id="li-tab-global-stats"><a href="#tab-global-stats" data-toggle="tab"><h3>Global
+                  stats</h3></a></li>
+          </ul>
+    </nav>
+  </div>
+
     <div class="tab-content">
         <div class="tab-pane active text-style" id="tab-rank">
-            <h1>Player Rating Ranking</h1>
+            <h1 id="title-header">Player Rating Ranking</h1>
             <div class="row">
                 <table class="table-container table table-inverse table-responsive" id="rank-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Name</th>
+                            <th>Rating</th>
+                            <th>Wins</th>
+                            <th>Loses</th>
+                            <th>Sets</th>
+                        </tr>
+                    </thead>
                     <tbody>
-                    <tr>
-                        <td>Rank</td>
-                        <td>Player</td>
-                        <td>Rating</td>
-                        <td>Wins</td>
-                        <td>Loses</td>
-                        <td>Sets</td>
-                    </tr>
                     </tbody>
                 </table>
             </div>
@@ -56,6 +61,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 <script type="text/javascript" src="scripts/sample.js" charset="utf-8"></script>
 <script type="text/javascript" src="scripts/rest.js" charset="utf-8"></script>
 </body>

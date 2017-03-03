@@ -6,9 +6,19 @@ $(document).ready(function() {
     $("#rank-table").find("tr:gt(0)").remove();
     var rankNo = 1;
     for(playerRow of response) {
-      $('#rank-table tr:last').after("<tr class='player-row' id='"+playerRow.username+"'><td>"+rankNo+"</td><td>"+playerRow.username+"</td><td>"+playerRow.points+"</td><td>"+playerRow.gamesWon+"</td><td>"+playerRow.gamesLost+"</td><td>"+playerRow.setsWon+" : "+playerRow.setsLost+"</td></tr>");
+      $('#rank-table tbody').append("<tr class='player-row' id='"+playerRow.username+"'><td>"+rankNo+"</td><td>"+playerRow.username+"</td><td>"+playerRow.points+"</td><td>"+playerRow.gamesWon+"</td><td>"+playerRow.gamesLost+"</td><td>"+playerRow.setsWon+" : "+playerRow.setsLost+"</td></tr>");
       rankNo++;
     }
+     $('#example').DataTable({
+
+     });
+     $('#rank-table').DataTable({
+       "lengthChange": false,
+       "paging": false,
+       "info": false,
+    //   "dom": -f'<"toolbar">rtip' // TODO: fix this to move search box to the middle
+     });
+
   }
   });
 
@@ -25,7 +35,7 @@ $(document).ready(function() {
       $("#rank-table").find("tr:gt(0)").remove();
       var rankNo = 1;
       for(playerRow of response) {
-        $('#rank-table tr:last').after("<tr class='player-row' id='"+playerRow.username+"'><td>"+rankNo+"</td><td>"+playerRow.username+"</td><td>"+playerRow.points+"</td><td>"+playerRow.gamesWon+"</td><td>"+playerRow.gamesLost+"</td><td>"+playerRow.setsWon+" : "+playerRow.setsLost+"</td></tr>");
+        $('#rank-table tbody').append("<tr class='player-row' id='"+playerRow.username+"'><td>"+rankNo+"</td><td>"+playerRow.username+"</td><td>"+playerRow.points+"</td><td>"+playerRow.gamesWon+"</td><td>"+playerRow.gamesLost+"</td><td>"+playerRow.setsWon+" : "+playerRow.setsLost+"</td></tr>");
         rankNo++;
       }
     }

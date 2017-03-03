@@ -1,37 +1,37 @@
-.nav-sidebar {
+.custom-nav {
     width: 100%;
     padding: 30px 0;
-    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
     /*background-color: #323C50;*/
 }
 
-.nav-sidebar a {
+.custom-nav a {
     -webkit-transition: all 0.08s linear;
     -moz-transition: all 0.08s linear;
     -o-transition: all 0.08s linear;
     transition: all 0.08s linear;
 }
 
-.nav-sidebar .active a {
+.custom-nav .active a {
     cursor: default;
     background-color: #464A52;
     color: #fff;
 }
 
-.nav-sidebar .active a:hover {
+.custom-nav .active a:hover {
     background-color: #464A52;
 }
 
-.nav-sidebar > ul > li > a:hover {
+.custom-nav > ul > li > a:hover {
     background-color: #464A52;
 }
 
-.nav-sidebar a:hover {
+.custom-nav a:hover {
     background-color: #464A52;
 }
 
-.nav-sidebar .text-overflow a,
-.nav-sidebar .text-overflow .media-body {
+.custom-nav .text-overflow a,
+.custom-nav .text-overflow .media-body {
     white-space: nowrap;
     overflow: hidden;
     -o-text-overflow: ellipsis;
@@ -43,4 +43,10 @@
     line-height: 23px;
     margin: 0 13px 0 0;
     font-size: 25px;
+}
+.glyphicon-move-up {
+  color: green;
+}
+.glyphicon-move-down {
+  color: red;
 }
