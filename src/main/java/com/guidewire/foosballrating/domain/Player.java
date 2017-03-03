@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 public class Player implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
     private long id;
     private String username;
     private int gamesWon;
@@ -11,6 +13,7 @@ public class Player implements Serializable {
     private int setsWon;
     private int setsLost;
     private int points;
+
 
     public long getId() {
         return id;

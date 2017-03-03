@@ -1,8 +1,11 @@
 package com.guidewire.foosballrating.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Score {
+public class Score implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private int id;
     private String username;
