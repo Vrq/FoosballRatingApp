@@ -6,12 +6,10 @@ var button_dashboard = "#button-dashboard";
 var button_input = "#button-input";
 $(document).ready(function () {
     $(ratingupdate).hide();
-    //$(button_input).hide();
     $(button_save).click(function () {
         $(element).prop('disabled', true);
         $(gamescore).hide();
         $(ratingupdate).show();
-        //$(button_input).show();
         var player1=$("#player1").find(':selected').text();
         var player2=$("#player2").find(':selected').text();
         var player3=$("#player3").find(':selected').text();
