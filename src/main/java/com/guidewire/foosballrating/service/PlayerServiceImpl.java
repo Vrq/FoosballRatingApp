@@ -46,8 +46,4 @@ public class PlayerServiceImpl implements PlayerService {
         return playerMapper.getByUsername(username) != null;
     }
 
-    @Override
-    public int getPlayerRank(String username) {
-        return playerMapper.getPlayerRank(username);
-    }
 }

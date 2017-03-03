@@ -13,6 +13,8 @@ public class Player implements Serializable {
     private int setsWon;
     private int setsLost;
     private int points;
+    private int winCount;
+    private int lossCount;
 
 
     public long getId() {
@@ -69,5 +71,21 @@ public class Player implements Serializable {
 
     public void setPoints(int points) {
         this.points = points;
+    }
+
+    public int getWinCount() {
+        return winCount;
+    }
+
+    public void setWinCount(int winCount) {
+        this.winCount = winCount;
+    }
+
+    public int getLossCount() {
+        return lossCount;
+    }
+
+    public void setLossCount(int lossCount) {
+        this.lossCount = lossCount;
     }
 }

@@ -8,9 +8,10 @@ import java.util.List;
 //@Mapper
 public interface PlayerMapper {
 
-    String insert = "INSERT INTO players (username, gamesWon, gamesLost, setsWon, setsLost, points) VALUES (#{username}, #{gamesWon}, #{gamesLost}, #{setsWon}, #{setsLost}, #{points})";
-    String update = "UPDATE players SET gamesWon = #{gamesWon}, gamesLost = #{gamesLost}, setsWon = #{setsWon}, setsLost = #{setsLost}, points = #{points} WHERE username = #{username}";
-    String selectRank = "SELECT z.rank FROM (SELECT username, points, gamesWon, setsWon, rownum() as rank FROM players ORDER BY points DESC , gamesWon DESC, setsWon DESC) as z WHERE username=#{username}";
+    String insert = "INSERT INTO players (username, gamesWon, gamesLost, setsWon, setsLost, points, winCount, lossCount) " +
+            "VALUES (#{username}, #{gamesWon}, #{gamesLost}, #{setsWon}, #{setsLost}, #{points}, #{winCount}, #{lossCount})";
+    String update = "UPDATE players SET gamesWon = #{gamesWon}, gamesLost = #{gamesLost}, setsWon = #{setsWon}, setsLost = #{setsLost}," +
+            " points = #{points} winCount = #{winCount}, lossCount=#{lossCount} WHERE username = #{username}";
 
     @Select("SELECT * from players ORDER BY points DESC, gamesWon DESC, setsWon DESC, username ASC")
     List<Player> getAllPlayers();
@@ -28,8 +29,10 @@ public interface PlayerMapper {
     @Update(update)
     int updatePlayer(Player player);
 
-    @Select(selectRank)
-    int getPlayerRank(@Param("username")String username);
+    @Select("SELECT * FROM players ORDER BY winCount DESC")
+    List<Player> getByWinCount();
 
+    @Select("SELECT * FROM players ORDER BY lossCount DESC")
+    List<Player> getByLossCount();
 
 }
