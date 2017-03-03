@@ -10,6 +10,15 @@ public class Score {
     private int points;
     private Date creationTime;
 
+    public Score(){}
+
+    public Score(String username, int rank, int points){
+        this.username = username;
+        this.rank = rank;
+        this.points = points;
+        this.creationTime = new Date();
+    }
+
     public int getId() {
         return id;
     }
