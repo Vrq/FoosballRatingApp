@@ -9,10 +9,7 @@ import com.guidewire.foosballrating.service.ScoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
@@ -48,7 +45,7 @@ public class PlayersController {
     }
 
     @RequestMapping(value = "/insertPlayer", method = RequestMethod.POST)
-    public ResponseEntity<String> insertPlayer(@RequestParam("player") Player player) {
+    public ResponseEntity<String> insertPlayer(@RequestBody Player player) {
         int points = ratingCalculator.startingRating();
 
         player.setPoints(points);
@@ -64,7 +61,7 @@ public class PlayersController {
     }
 
     @RequestMapping(value = "/updatePlayer", method = RequestMethod.POST)
-    public ResponseEntity<String> updatePlayer(@RequestParam("player") Player player) {
+    public ResponseEntity<String> updatePlayer(@RequestBody Player player) {
         playerService.updatePlayer(player);
         return new ResponseEntity<>(HttpStatus.OK);
     }
