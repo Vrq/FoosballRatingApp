@@ -15,6 +15,11 @@ public class ScoreServiceImpl implements ScoreService {
     ScoreMapper scoreMapper;
 
     @Override
+    public int insertScore(Score score) {
+        throw new NotImplementedException();
+    }
+
+    @Override
     public List<Score> getAllScoreForPlayer(String playerName) {
         return scoreMapper.getAllScores(playerName);
     }

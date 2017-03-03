@@ -7,6 +7,9 @@ import java.util.Date;
 import java.util.List;
 
 public interface ScoreService {
+
+    public int insertScore(Score score);
+
     public List<Score> getAllScoreForPlayer(String playerName);
 
     public Score getLatestScoreForPlayer(String playerName);
